@@ -1,4 +1,17 @@
+@charset "UTF-8";
+*, *​:before, *:after {
+  box-sizing: border-box; }
+
+img, embed, object, video {
+  max-width: 100%;
+  height: auto; }
+
 body {
-  background: blue; }
-  body div {
-    border: 1px solid black; }
+  width: 100%; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
