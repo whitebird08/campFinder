@@ -17,3 +17,15 @@ body{
 .clearfix:after {
  clear: both;
 }
+
+.error{
+	color: red;
+}
+
+#map {
+  width: 800px;
+  height: 400px;
+  background-color: #CCC;
+  margin: auto; 
+}
+
