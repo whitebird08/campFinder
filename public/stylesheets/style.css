@@ -24,3 +24,7 @@ body {
   height: 400px;
   background-color: #CCC;
   margin: auto; }
+
+.photo {
+  width: 100px;
+  height: 100px; }

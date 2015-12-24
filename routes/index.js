@@ -61,9 +61,28 @@ router.get('/parse', function(req, res, next) {
             var lat = Number(r['$'].latitude)
             parkID = Number(r['$'].facilityID)
             var facilityName = r['$'].facilityName
-            
-            // console.log(r['$'], 'rrrrrrrrrrrrrrrrr')
-            data.push( { lat: lat, lng: lng, facilityName: facilityName, facilityId: parkID} )
+            var available = r['$'].availabilityStatus
+
+            var photo = r['$'].faciltyPhoto
+            var amps = r['$'].sitesWithAmps
+            var pets = r['$'].sitesWithPetsAllowed
+            var sewerHookups = r['$'].sitesWithSewerHookup
+            var waterHookups = r['$'].sitesWithWaterHookup
+            var waterFront = r['$'].sitesWithWaterfront
+
+            data.push( { 
+              lat: lat, 
+              lng: lng, 
+              facilityId: parkID,
+              facilityName: facilityName, 
+              photo: photo,
+              available: available,
+              amps: amps,
+              pets:pets,
+              sewerHookups: sewerHookups,
+              waterHookups: waterHookups,
+              waterFront: waterFront
+              } )
           });
       });
 

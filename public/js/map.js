@@ -15,12 +15,27 @@ $(document).ready(function() {
           var marker = new google.maps.Marker({
               position: data[i],
               icon: iconBase ,
-              title:"Hello Campground"          
+              title: data[i].facilityName        
           });
+        
+        for(prop in data[i]){
+          if(prop === 'Y'){
+            console.log(prop, 'proppppppp')
+          }
+        }
+          
 
           var contentString = '<div id="content">'+
             '<h1>' + data[i].facilityName + '</h1>' +
-            '</div>';
+            "<div class='photo'><img src='http://www.reserveamerica.com" + data[i].photo + "'/></div>" +
+            '<div>' + data[i].available + '</div>' +
+            '<div>' + data[i].amps + '</div>' +
+            '<div>' + data[i].pets + '</div>' +
+            '<div>' + data[i].sewerHookups + '</div>' +
+            '<div>' + data[i].waterHookups + '</div>' +
+            '<div>' + data[i].waterFront + '</div>' +
+            '</div>'
+            ;
 
           console.log(data[i], 'dataaaaa')
           marker.setMap(map);
