@@ -18,11 +18,11 @@ $(document).ready(function() {
               title: data[i].facilityName        
           });
         
-        for(prop in data[i]){
-          if(prop === 'Y'){
-            console.log(prop, 'proppppppp')
+          for(prop in data[i] == 'Y'){
+         
+              console.log(data[i].prop, 'propppppppYYYYYYYYY')
+      
           }
-        }
           
 
           var contentString = '<div id="content">'+

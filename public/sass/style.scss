@@ -1,3 +1,8 @@
+@import "mixins.scss";
+@import "normalize.scss";
+@import "variables.scss";
+
+
 *, *​:before, *:after {
  box-sizing: border-box;
 }
@@ -9,14 +14,7 @@ img, embed, object, video{
 body{
  width: 100%;
 }
-.clearfix:before, .clearfix:after {
- content: "";
- display: table;
-}
 
-.clearfix:after {
- clear: both;
-}
 
 .error{
 	color: red;
