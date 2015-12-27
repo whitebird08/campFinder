@@ -12,9 +12,18 @@ app.config(function($routeProvider, $locationProvider){
    templateUrl: '/partials/campgrounds.html',
    controller: 'HomeController'
  })
+ //  .when('/journey', {
+ //   templateUrl: '/partials/journey.html',
+ //   controller: 'HomeController'
+ // })
+  .when('/search', {
+   templateUrl: '/partials/search.html',
+   controller: 'HomeController'
+ })
    .otherwise({redirectTo:'/'});
    $locationProvider.html5Mode(true);
 })
+
 
 // app.run(function($rootScope, $location){
 //   $rootScope.$on('$routeChangeError', function(event, next, previous, error){
