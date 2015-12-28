@@ -9,8 +9,8 @@ var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: 
     var directions = null;
     var routeBoxer = null;
     var distance = null; // km
-    var directionService;
-    var route;
+    // var directionService;
+    // var route;
     
     function initialize() {
       // Default the map view to the continental U.S.
@@ -24,7 +24,7 @@ var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: 
       routeBoxer = new RouteBoxer();
       
       directionService = new google.maps.DirectionsService();
-     directionsRenderer = new google.maps.DirectionsRenderer({ map: map });      
+      directionsRenderer = new google.maps.DirectionsRenderer({ map: map });      
     }
     
     function route() {
@@ -68,6 +68,12 @@ var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: 
           map: map
         });
       }
+      console.log(boxes[0].N.N, 'is boxes dot n dot n')
+      console.log(boxes[0].N.j, 'is boxes dot n dot j')
+      console.log(boxes[0].j.N, 'is boxes dot j dot n')
+      console.log(boxes[0].j.j, 'is boxes dot j dot j')
+// console.log(data[i][0].lat, 'is data sub i sub zero dot lat')
+      
     }
     
     // Clear boxes currently on the map
