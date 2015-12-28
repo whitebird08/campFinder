@@ -2,6 +2,7 @@ var directionService = new google.maps.DirectionsService();;
 var directionsRenderer = new google.maps.DirectionsRenderer({ map: map }); ;
 var map = null;
 var routeBoxer = new RouteBoxer();
+var data = null;
 
 $(document).ready(function() {
  // function initialize() {
@@ -21,7 +22,7 @@ $(document).ready(function() {
  //    directionsRenderer = new google.maps.DirectionsRenderer({ map: map });      
  //  }
 
- 
+
 
 
   var myLatlng = new google.maps.LatLng(39.5403, -106.0600);
@@ -34,12 +35,19 @@ $(document).ready(function() {
     method: 'GET',
     url: '../parse',            
     success: function(data) {
+      data = data;
       console.log('ajax');
+
+      $('#get-route').on('click', function(){
+        console.log(data, 'after clicking');
+        console.log('we are getting the route')
+        route(data);
+      });
    
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       }); 
-      var dumpArray = [data]
+     
 
       for(var i=0; i < data.length; i++){
         var iconBase = 'http://www.googlemapsmarkers.com/v1/009900/';
@@ -67,7 +75,7 @@ $(document).ready(function() {
         // console.log(data, 'dataaaaa')
         // console.log(data[i].lat, 'is data sub i sub zero dot lat')
 
-        marker.setMap(map);
+        // marker.setMap(map);
          // console.log(marker, 'markerrrrr')
         google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
           return function(){
@@ -90,7 +98,7 @@ $(document).ready(function() {
 
    
       
-      function route() {
+      function route(data) {
         // Clear any previous route boxes from the map
         clearBoxes();
         
@@ -112,10 +120,23 @@ $(document).ready(function() {
             var path = result.routes[0].overview_path;
             var boxes = routeBoxer.box(path, distance);
             drawBoxes(boxes);
+             for(var i = 0; i < data.length; i++){
+              console.log(boxes, 'this is boxes')
+          if ((data[i].lat > boxes[0].N.N && data[i].lat < boxes[0].N.j) ||
+            (data[i].lat > boxes[0].j.N && data[i].lat < boxes[0].j.j) ){
+            var marker = new google.maps.Marker({
+              position: data[i],
+              icon: 'http://www.googlemapsmarkers.com/v1/009900/',
+              title: data[i].facilityName        
+            });
+           marker.setMap(map);  
+          }
+        } 
           } else {
             alert("Directions query failed: " + status);
           }
         });
+       
       }
 
       // Draw the array of boxes as polylines on the map
@@ -131,16 +152,17 @@ $(document).ready(function() {
             map: map
           });
         }
-        // console.log(boxes[0].N.N, 'is boxes dot n dot n')
-        // console.log(boxes[0].N.j, 'is boxes dot n dot j')
-        // console.log(boxes[0].j.N, 'is boxes dot j dot n')
-        // console.log(boxes[0].j.j, 'is boxes dot j dot j')
-        // if (data[i].lat > boxes[0].N.N && data[i].lat < boxes[0].N.j){
-        //   marker.setMap(map);
-        // }
-        // if (data[i].lng > boxes[0].j.N && data[i].lng < boxes[0].j.j){
-        //   marker.setMap(map);
-        // }
+        console.log(boxes[0].N.N, 'is boxes dot n dot n')
+        console.log(boxes[0].N.j, 'is boxes dot n dot j')
+        console.log(boxes[0].j.N, 'is boxes dot j dot n')
+        console.log(boxes[0].j.j, 'is boxes dot j dot j')
+        // console.log(data)
+       
+        //  // else if (data[i].lng > boxes[0].j.N && data[i].lng < boxes[0].j.j){
+        // //   marker.setMap(map);
+        // // } 
+
+
 
       }
 
