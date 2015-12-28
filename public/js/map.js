@@ -1,5 +1,5 @@
-var directionService = new google.maps.DirectionsService();;
-var directionsRenderer = new google.maps.DirectionsRenderer({ map: map }); ;
+var directionService = new google.maps.DirectionsService();
+var directionsRenderer = new google.maps.DirectionsRenderer(); 
 var map = null;
 var routeBoxer = new RouteBoxer();
 var data = null;
@@ -28,19 +28,21 @@ $(document).ready(function() {
   var myLatlng = new google.maps.LatLng(39.5403, -106.0600);
   // var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: myLatlng});
   map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: myLatlng});
+  directionsRenderer.setMap(map)
+  // console.log(map)
 
-  console.log(map)
   
   $.ajax({
     method: 'GET',
     url: '../parse',            
     success: function(data) {
       data = data;
-      console.log('ajax');
+      // console.log('ajax');
 
       $('#get-route').on('click', function(){
-        console.log(data, 'after clicking');
-        console.log('we are getting the route')
+        // console.log(data, 'after clicking');
+        // console.log('we are getting the route')
+
         route(data);
       });
    
@@ -93,8 +95,8 @@ $(document).ready(function() {
       var directions = null;
       // var routeBoxer = null;
       var distance = null; // km
-      // var directionService;
-      // var route;
+      var directionService;
+      var route;
 
    
       
@@ -120,18 +122,39 @@ $(document).ready(function() {
             var path = result.routes[0].overview_path;
             var boxes = routeBoxer.box(path, distance);
             drawBoxes(boxes);
-             for(var i = 0; i < data.length; i++){
-              console.log(boxes, 'this is boxes')
-          if ((data[i].lat > boxes[0].N.N && data[i].lat < boxes[0].N.j) ||
-            (data[i].lat > boxes[0].j.N && data[i].lat < boxes[0].j.j) ){
-            var marker = new google.maps.Marker({
-              position: data[i],
-              icon: 'http://www.googlemapsmarkers.com/v1/009900/',
-              title: data[i].facilityName        
-            });
-           marker.setMap(map);  
-          }
-        } 
+            for(var i=0; i < boxes.length; i++){
+              console.log('----------------------------------------------');
+              for(var j = 0; j < data.length; j++){
+                    // console.log(boxes, 'this is boxes')
+                    // console.log(boxes[i], 'boxes sub i')
+                    // console.log(boxes[i].N.j, 'boxes i dot n dot j right??')
+                    // console.log(data[j].lat , 'data j dot lat')
+                    // console.log(boxes[i].N.N, 'boxes i dot n dot n left??')
+
+                    // console.log(boxes[i].j.N, 'boxes i dot j dot n')
+                    // console.log(data[j].lng , 'data j dot lng')
+                    // console.log(boxes[i].j.j, 'boxes i dot j dot j')
+
+                // if (data[j].lat > boxes[i].N.N && data[j].lat < boxes[i].N.j &&
+                //   data[j].lng > boxes[i].j.N && data[j].lng < boxes[i].j.j ){
+                if(data[j].lat > boxes[i].N.N && data[j].lat < boxes[i].N.j){
+                  if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
+                    console.log('...found one')
+                    var marker = new google.maps.Marker({
+                      position: data[j],
+                      icon: 'http://www.googlemapsmarkers.com/v1/009900/',
+                      title: data[j].facilityName        
+                    });
+                    marker.setMap(map); 
+                  } 
+
+                } else {
+                  if (data[j].facilityName === 'SILVER QUEEN'){
+                  console.log('...did not find one, comparing latitude: ' + boxes[i].N.j + " > " + data[j].lat + " < " + boxes[i].N.N + "       comparing longitude: " + boxes[i].j.j + " > " + data[j].lng + " < " + boxes[i].j.N);}
+                }
+              } 
+            } 
+              
           } else {
             alert("Directions query failed: " + status);
           }
@@ -152,25 +175,23 @@ $(document).ready(function() {
             map: map
           });
         }
-        console.log(boxes[0].N.N, 'is boxes dot n dot n')
-        console.log(boxes[0].N.j, 'is boxes dot n dot j')
-        console.log(boxes[0].j.N, 'is boxes dot j dot n')
-        console.log(boxes[0].j.j, 'is boxes dot j dot j')
+        // console.log(boxes[0].N.N, 'is boxes dot n dot n')
+        // console.log(boxes[0].N.j, 'is boxes dot n dot j')
+        // console.log(boxes[0].j.N, 'is boxes dot j dot n')
+        // console.log(boxes[0].j.j, 'is boxes dot j dot j')
         // console.log(data)
        
         //  // else if (data[i].lng > boxes[0].j.N && data[i].lng < boxes[0].j.j){
         // //   marker.setMap(map);
         // // } 
 
-
-
       }
 
  
   // Clear boxes currently on the map
   function clearBoxes() {
-    console.log('.....clearBoxes')
-    console.log(map, 'map in clearBoxes');
+    // console.log('.....clearBoxes')
+    // console.log(map, 'map in clearBoxes');
     if (boxpolys != null) {
       for (var i = 0; i < boxpolys.length; i++) {
         boxpolys[i].setMap(null);
