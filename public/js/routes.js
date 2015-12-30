@@ -12,10 +12,6 @@ app.config(function($routeProvider, $locationProvider){
    templateUrl: '/partials/campgrounds.html',
    controller: 'HomeController'
  })
-  .when('/routeBox', {
-   templateUrl: '/partials/routeBox.html',
-   controller: 'HomeController'
- })
   .when('/search', {
    templateUrl: '/partials/search.html',
    controller: 'HomeController'

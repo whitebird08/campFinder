@@ -45,7 +45,6 @@ function route(data) {
   }
   clearMarkers();
   
-  
   // Convert the distance to box around the route from miles to km
   distance = parseFloat(document.getElementById("distance").value) * 1.609344;
   
@@ -78,7 +77,8 @@ function route(data) {
             if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
               var marker = new google.maps.Marker({
                 position: data[j],
-                icon: 'http://www.googlemapsmarkers.com/v1/009900/',
+                icon: '/images/marker.png',
+                 // icon: 'http://www.googlemapsmarkers.com/v1/009900/',
                 title: data[j].facilityName        
               });
               marker.setMap(map); 
