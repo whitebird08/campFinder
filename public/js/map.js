@@ -64,14 +64,18 @@ function route(data) {
       var path = result.routes[0].overview_path;
       var boxes = routeBoxer.box(path, distance);
       drawBoxes(boxes);
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      }); 
       
       for(var i=0; i < boxes.length; i++){
+
         
         for(var j = 0; j < data.length; j++){
               
           if(data[j].lat > boxes[i].N.N && data[j].lat < boxes[i].N.j){
             if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
-              console.log('...found one')
               var marker = new google.maps.Marker({
                 position: data[j],
                 icon: 'http://www.googlemapsmarkers.com/v1/009900/',
@@ -79,10 +83,6 @@ function route(data) {
               });
               marker.setMap(map); 
               markersArray.push(marker);
-
-              var infowindow = new google.maps.InfoWindow({
-                content: contentString
-              }); 
 
               var contentString = '<div id="content">'+
                 '<h1>' + data[j].facilityName + '</h1>' +
@@ -98,7 +98,6 @@ function route(data) {
                 '</div>';
 
               google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
-                console.log(marker, 'merkerrrrrrrrrrrr')
                 return function(){
                   infowindow.setContent(contentString);
                   infowindow.open(map,marker);
@@ -127,14 +126,9 @@ function drawBoxes(boxes) {
       map: map
     });
   }
- 
-
 }
- 
 // Clear boxes currently on the map
 function clearBoxes() {
-  // console.log('.....clearBoxes')
-  // console.log(map, 'map in clearBoxes');
   if (boxpolys != null) {
     for (var i = 0; i < boxpolys.length; i++) {
       boxpolys[i].setMap(null);
