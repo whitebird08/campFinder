@@ -1,5 +1,6 @@
+
 var directionService = new google.maps.DirectionsService();
-var directionsRenderer = new google.maps.DirectionsRenderer(); 
+var directionsRtoerer = new google.maps.DirectionsRtoerer(); 
 
 
 var map = null;
@@ -11,7 +12,7 @@ $(document).ready(function() {
   var myLatlng = new google.maps.LatLng(39.5403, -106.0600);
   // var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: myLatlng});
   map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: myLatlng});
-  directionsRenderer.setMap(map)
+  directionsRtoerer.setMap(map)
 
   
   $.ajax({
@@ -59,15 +60,14 @@ function route(data) {
     travelMode: google.maps.DirectionsTravelMode.DRIVING
   }
 
-
+  
   
 
   // Make the directions request
   directionService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-      directionsRenderer.setDirections(result);
-      console.log(result, 'result in directionsRenderer')
-      directionsRenderer.setPanel(document.getElementById('right-panel'));
+      directionsRtoerer.setDirections(result);
+      console.log(result, 'result in directionsRtoerer')
 
       
       // Box around the overview path of the first route
