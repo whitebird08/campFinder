@@ -27,7 +27,6 @@ $(document).ready(function() {
 });
 
 
-
 // var map = null;
 var boxpolys = null;
 var directions = null;
@@ -36,7 +35,9 @@ var distance = null; // km
 // var directionService;
 var route;
 var markersArray = []
-console.log(markersArray)
+// console.log(markersArray)
+
+
 function route(data) {
 
   clearBoxes()
@@ -59,15 +60,13 @@ function route(data) {
     travelMode: google.maps.DirectionsTravelMode.DRIVING
   }
 
-
-  
-
   // Make the directions request
   directionService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsRenderer.setDirections(result);
-      console.log(result, 'result in directionsRenderer')
       directionsRenderer.setPanel(document.getElementById('right-panel'));
+
+    
 
       
       // Box around the overview path of the first route
@@ -79,9 +78,8 @@ function route(data) {
         content: contentString
       }); 
       
-      for(var i=0; i < boxes.length; i++){
-
-        
+      
+      for(var i=0; i < boxes.length; i++){  
         for(var j = 0; j < data.length; j++){
               
           if(data[j].lat > boxes[i].N.N && data[j].lat < boxes[i].N.j){
@@ -94,6 +92,7 @@ function route(data) {
               });
               marker.setMap(map); 
               markersArray.push(marker);
+              
 
               var contentString = '<div id="content">'+
                 '<h1>' + data[j].facilityName + '</h1>' +
@@ -118,9 +117,15 @@ function route(data) {
           } 
         } 
       }
+      for (var i = 0; i < markersArray.length; i++){
+        console.log(markersArray[i].title, 'markersArray')  
+        $('.markerLinks').append('<div>' + markersArray[i].title + '</div>' );
+      }  
     } else {
       alert("Directions query failed: " + status);
-    }          
+    }  
+   
+    
   });
 }
 

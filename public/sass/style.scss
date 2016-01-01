@@ -11,6 +11,7 @@
  max-width: 100%;
  height: auto;
 }*/
+
 body{
  width: 100%;
 }
@@ -20,19 +21,17 @@ body{
 }
 
 #map {
-  width: 800px;
+  width: 100%;
   height: 400px;
   background-color: #CCC;
   margin: auto; 
+  float: right;
 }
 
 .photo {
 	width: 200%px;
 	height: 200%px;
-
 }
-
-
 
 #right-panel {
   font-family: 'Roboto','sans-serif';
@@ -59,11 +58,9 @@ width: 390px;
 overflow: auto;
 }
 
-/*#right-panel {
+#right-panel {
   float: none;
   width: auto;
-}*/
-
-
+}
 
 

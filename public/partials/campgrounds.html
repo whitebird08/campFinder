@@ -1,17 +1,20 @@
+
+<div class='markerLinks'></div>
 <h1>Campgrounds</h1>
-
-<div id="map"></div>
-<div id="right-panel"></div>
- 
-
-
     Campgrounds within 
-
     <input type="text" id="distance" value="5" size="2">miles
-    of the route from <input type="text" id="from" value="boulder"/>
+    of the route <br>
+    from <input type="text" id="from" value="boulder"/> <br>
     to <input type="text" id="to" value="aspen"/>
     <!-- <input type="submit" onclick="route()"/> -->
-    <input type="submit" id="get-route"/>
+    <input type="submit" id="get-route"/> <br>
+<div>
+	<div id="map"></div> 
+	<div id="side_bar" style="overflow:auto; height:450px;">
+		<div id="right-panel"></div>
+	</div>
+</div>
+
 
 
 <script src="/js/map.js"></script>
