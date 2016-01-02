@@ -26,7 +26,6 @@ $(document).ready(function() {
   });
 });
 
-
 // var map = null;
 var boxpolys = null;
 var directions = null;
@@ -36,7 +35,6 @@ var distance = null; // km
 var route;
 var markersArray = []
 // console.log(markersArray)
-
 
 function route(data) {
 
@@ -65,10 +63,8 @@ function route(data) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsRenderer.setDirections(result);
       directionsRenderer.setPanel(document.getElementById('right-panel'));
-
-    
-
       
+    
       // Box around the overview path of the first route
       var path = result.routes[0].overview_path;
       var boxes = routeBoxer.box(path, distance);
@@ -113,14 +109,18 @@ function route(data) {
                   infowindow.open(map,marker);
                 };
               })(marker,contentString,infowindow)); 
+
+
             } 
           } 
         } 
       }
       for (var i = 0; i < markersArray.length; i++){
         console.log(markersArray[i].title, 'markersArray')  
-        $('.markerLinks').append('<div>' + markersArray[i].title + '</div>' );
+        // $('.markerLinks').append('<div>' + markersArray[i].title + '</div>' );
+        $('.markerLinks').append('<a href="#">' + markersArray[i].title + '</a><br>' );
       }  
+      
     } else {
       alert("Directions query failed: " + status);
     }  

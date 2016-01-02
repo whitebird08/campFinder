@@ -91,13 +91,13 @@ router.get('/parse', function(req, res, next) {
       // unirest.get( "http://api.amp.active.com/camping/campgrounds?pname=ASPEN&api_key=6x8gz7qm68nwaj9ckzg3z5yg")
       .end(function (response) {
         var campsitesXML = response.body
-        // console.log(response.body)
+        // console.log(response.body, 'campsitesssss')
         var data = []
         parseString(campsitesXML, function (err, result) {        
               // console.log(result, "THIS IS IT!!!!!!!!!!!!!!!!!")
               // data.push( { campgroundName = parkId } )
         });
-      // console.log(data) 
+      // console.log(data, 'dataaa') 
       // res.json(data);
     });
       // console.log(data) 
