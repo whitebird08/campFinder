@@ -154,9 +154,6 @@ function clearBoxes() {
 }
 
 
-  
-  
-
 
 
 
