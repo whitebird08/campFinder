@@ -1,46 +1,47 @@
 <md-toolbar layout="row" >
-      <h1>Make A Route</h1>
+      <img src="/images/campsideTitle&LogoMedium.png" />
 </md-toolbar>
 
-    <!-- Container #2 -->
 <div flex layout="row">
-  
- <!-- Container #3  -->
- <div class="left-half">
-   <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 ">
-    	<div class='foo'>
-    	    Campgrounds within 
-            
-    	    <input type="text" id="distance" value="1" size="2">miles
-    	    of the route <br>
-    	    from <input type="text" id="from" value="boulder"/> <br>
-    	    to <input type="text" id="to" value="aspen"/>
-    	    <input type="submit" id="get-route"/> <br>
-    	     <div class='markerLinks'></div> 
-    	     <div id="right-panel"></div>
-    	</div>
-    </md-sidenav>
-</div>
+    <div class="myPanels">
 
-<div class='right-half'>
-    <!-- Container #4 -->
-     <md-content flex id="content" >
-    	<div id="map"></div>
-    </md-content>
-</div>
+    <div class="left-left">
+        <h1>My Route </h1>
+        <div class="directions">
+            <md-sidenav md-is-locked-open="true" class="md-whiteframe-z1 ">
+        	    Campgrounds within 
+        	    <input type="text" id="distance" value="1" size="2"> miles of the route <br>
+        	    from <input type="text" id="from" value="boulder"/> <br>
+        	    to <input type="text" id="to" value="aspen"/>
+        	    <input type="submit" id="get-route"/> <br>
+        	    <div class='markerLinks'></div> 
+        	    <div id="right-panel"></div>
+            </md-sidenav>
+        </div>
+    </div>
+    <div class="left-middle">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 ">
+            <h1>My Trips </h1>
+            <div class="tripCard">Trip Number One</div>
+            <div class="tripCard">Trip Number One</div>
+        </md-sidenav>
+    </div>
+    <div class="left-right">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3 ">
+            <h1>My Campgrounds </h1>
+            <div class="spotCard">Spot Number One</div>
+            <div class="spotCard">Spot Number One</div>
+        </md-sidenav>
+    </div>
+    <div class='right-half'>
+        <md-content flex id="content" >
+            <div id="map"></div>
+        </md-content>
+    </div>
+    </div>
 </div> 
 
-
-
-
-
-
-
-
-
-
 <script src="/js/map.js"></script>
-
 
 <script type="text/javascript">
 	$('#')

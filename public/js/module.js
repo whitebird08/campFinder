@@ -8,7 +8,7 @@ app.factory('userFactory', function(){
         addUser: function(user){
            currentUser = user;
         },
-         clearUser: function(){
+        clearUser: function(){
            currentUser = null;
         }  
     }               

@@ -1,8 +1,8 @@
-@charset "UTF-8";
-/*@import "mixins.scss";
-@import "normalize.scss";
-@import "variables.scss";
-*/
+/*@charset "UTF-8";*/
+/*@import "mixins.scss";*/
+/*@import "normalize.scss";*/
+/*@import "variables.scss";*/
+
 /*
 *, *​:before, *:after {
  box-sizing: border-box;
@@ -22,9 +22,11 @@ body {
 }
 
 #map {
-  width: 1150px;
+  /*width: 100%;*/
   height: 700px;
   background-color: #CCC; 
+  /*border: 2px solid magenta;*/
+  /*z-index: 200;*/
 }
 
 .photo {
@@ -32,17 +34,66 @@ body {
   height: 53px;
 }
 
-.left-half {
+h1 {
+padding: 10px;
+color:green;
+}
+
+.left-left {
  float: left;
-  width: 20%; 
-  background: white;
+  width: 288px; 
+  background: #C8E6C9;
+   box-shadow: 5px 5px 5px rgba(0,0,0,0.25), 5px 5px 5px rgba(0,0,0,0.22);
+  z-index:500;
+
+}
+
+.directions {
+  float: left;
+    /*padding-right: 10px;*/
+  padding-left: 10px;
+
+}
+.left-middle {
+  float: left;
+  width: 288px;
+  height: 700px;
+  background:  #4CAF50;
+   box-shadow: 5px 5px 5px rgba(0,0,0,0.25), 5px 5px 5px rgba(0,0,0,0.22);
+  /*z-index:400;*/
+}
+.left-right {
+  float: left;
+  width:288px;
+  height: 700px;
+  background: #388E3C;
+   box-shadow: 5px 5px 5px rgba(0,0,0,0.25), 5px 5px 5px rgba(0,0,0,0.22);
+  /*z-index: 300;*/
+}
+.tripCard {
+  width: 260px;
+  height: 150px;
+  margin-top:10px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #C8E6C9; 
+
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);
+}
+.spotCard {
+  width: 260px;
+  height: 150px;
+  margin-top:10px;
+  margin-right: auto;
+  margin-left: auto;
+   background: #C8E6C9; 
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);
 }
 
 .right-half {
 float: left;
-  width: 80%; 
+  width: 40%; 
 }
-
 
 .main {
   width: 1440px;
@@ -315,3 +366,4 @@ float: left;
     align-items: center;
     justify-content: center;
   }*/
+

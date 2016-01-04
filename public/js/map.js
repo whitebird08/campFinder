@@ -82,7 +82,7 @@ function route(data) {
             if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
               var marker = new google.maps.Marker({
                 position: data[j],
-                icon: '/images/markerWhole.png',
+                icon: '/images/markerWholeShadowSmall.png',
                  // icon: 'http://www.googlemapsmarkers.com/v1/009900/',
                 title: data[j].facilityName        
               });
