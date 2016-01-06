@@ -16,7 +16,7 @@ var hash = bcrypt.hashSync(req.body.password, 8)
 	  if (camper){
 	    res.json('*Camper already exists');
 	  } else {
-	    campers.insert({email:req.body.email, password:hash}).then(function(camper){
+	    campers.insert({email:req.body.email, password:hash, trips:[]}).then(function(camper){
 	      res.json(camper);
 	    })
 	  }
@@ -38,6 +38,10 @@ router.post('/campers/login', function(req, res,next){
         res.json('*Invalid Email/Password');
       }
   })
+})
+
+router.get('/currentUser', function(req,res,next){
+  res.json(req.session.camper);
 })
 
 router.get('/campers/logout', function(req,res,next){
@@ -102,12 +106,29 @@ router.get('/parse', function(req, res, next) {
     });
       // console.log(data) 
       res.json(data);
-    });
-  
+    }); 
 });
 
+router.post('/campers/addTrip', function(req, res,next){
+  console.log('in post addTrip', req.body);
+         console.log(req.session.camper._id,'user id session');
 
+//not finished , in the middle of figuring out update
+//so we can add a tne trip to the trips array
+    campers.findOne({_id: req.session.camper._id}, function(err, doc){
+         doc.trips.push(req.body);
+     campers.update({_id:req.session.camper._id}, doc, function(err, doc){
+       res.json({error:err, doc:doc});
+     })
+   })     
+})
 
+router.get("/showTrips", function(req, res, next){
+  var currentUser = req.session.camper;
+  campers.findOne({_id:currentUser._id}, function(err, doc){
+    res.json(doc);
+  })
+})
 
 //* IMPORTANT * Keep this at the bottom * IMPORTANT *
 router.get('*', function(req, res, next) {

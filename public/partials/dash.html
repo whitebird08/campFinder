@@ -1,2 +1,62 @@
 <h1>My Trip Dashboard </h1>
 <button ng-click="logoutUser()">Log Out</button>
+<button><a href="/campgrounds">Make A Trip</a></button>
+
+<h1>My Trips</h1>
+            <div class="tripCard">Trip Number One</div>
+            <div class="tripCard">Trip Number Two</div>
+            <div class="tripsInDash" ng-repeat="current in currentUserTrips.trips track by $index">
+               <h1>Trip</h1>
+            	{{current.tripName}} <br/>
+            	{{current.route.to}}<br/>
+            	{{current.route.from}}
+
+            </div>
+
+    <div id="grid" class="main">
+		<div id="preview" class="view">
+			<div class="view-back">
+				<span data-icon="A">566</span>
+				<span data-icon="B">124</span>
+			</div>
+			<img src="images/campview.jpg" />
+		</div>
+		<div id="preview" class="view">
+			<div class="view-back">
+				<span data-icon="A">210</span>
+				<span data-icon="B">102</span>
+			</div>
+			<img src="images/campview.jpg" />
+		</div>
+		<div id="preview" class="view">
+			<div class="view-back">
+				<span data-icon="A">690</span>
+				<span data-icon="B">361</span>
+			</div>
+			<img src="images/campview.jpg" />
+		</div>
+		<div id="preview" class="view">
+			<div class="view-back">
+				<span data-icon="A">987</span>
+				<span data-icon="B">130</span>
+			</div>
+			<img src="images/campview.jpg" />
+		</div>
+	</div>
+</div>
+<script type="text/javascript">	
+	
+	Modernizr.load({
+		test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+		yep : ['http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js','js/jquery.hoverfold.js'],
+		nope: 'css/fallback.css',
+		callback : function( url, result, key ) {
+				
+			if( url === 'js/jquery.hoverfold.js' ) {
+		$( '#grid' ).hoverfold();
+			}
+
+		}
+	});
+		
+</script>

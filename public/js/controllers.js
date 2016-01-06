@@ -1,6 +1,11 @@
 
 
 app.controller('HomeController', function($scope, $http, $location, userFactory){
+  
+  $http.get("../showTrips").then(function(res){
+    $scope.currentUserTrips = res.data;
+  });
+
   var currUser;
   //example of send request to your express route
   $scope.registerUser = function(e, pass){
@@ -37,6 +42,7 @@ app.controller('HomeController', function($scope, $http, $location, userFactory)
   		$location.path("/")
   	})
   }
+
   //Not working yet , you could potentially store the facilityId in a DOM element
   //giving it an id and styling it as display hidden
   //then in your angular controller , traverse the DOM (somehow)
@@ -58,7 +64,40 @@ app.controller('HomeController', function($scope, $http, $location, userFactory)
     })
   }
 
-  
+  $scope.addNewTrip = function(tripName){
+
+  var currentUser;
+
+    $http.get('../currentUser').then(function(res){
+      currentUser = res.data;
+      console.log('user', currentUser);
+      var temp = {};
+      temp.tripName = tripName;
+      temp.user = currentUser;
+      temp.route = $scope.route;
+      temp.waypoints = [];
+      return temp;
+    }).then(function(postObj){
+
+      $http.post('../campers/addTrip', postObj).then(function(res){
+           console.log('res from post', res.data);
+           $scope.tripName = null;
+            $scope.route = null;
+           $location.path('/dash');
+      });
+
+    })
+
+
+
+    
+
+    
+
+
+  }
+    
+
 
 
 

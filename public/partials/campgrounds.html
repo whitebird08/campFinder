@@ -5,35 +5,55 @@
 <div flex layout="row">
     <div class="myPanels">
 
-    <div class="left-left">
+<!--     <div class="left-left">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z5 ">
+            <h1>This Trip </h1>
+            <div class="tripCard">
+
+                
+            </div>
+            
+        </md-sidenav>
+    </div> -->
+    <div class="left-middle">
+        <button ng-click="logoutUser()">Logout</button>
+        <button><a href="/dash">Dash</a> </button>
         <h1>My Route </h1>
+    
+            
+      
+            <label>New Trip Name</label>
+            <input id="trip" placeholder="trip name"/>
+        
+        
         <div class="directions">
-            <md-sidenav md-is-locked-open="true" class="md-whiteframe-z1 ">
-        	    Campgrounds within 
-        	    <input type="text" id="distance" value="1" size="2"> miles of the route <br>
-        	    from <input type="text" id="from" value="boulder"/> <br>
-        	    to <input type="text" id="to" value="aspen"/>
-        	    <input type="submit" id="get-route"/> <br>
-        	    <div class='markerLinks'></div> 
-        	    <div id="right-panel"></div>
+            <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
+                Campgrounds within 
+                <input type="text" id="distance" value="1" size="2"> miles of the route <br>
+                <!-- when you use a name with a dot after and then define a property name
+                in the ng-model , you generate a new object in $scope out of 
+                thin air -->
+                from <input type="text" id="from" ng-model="route.from" /> <br>
+                to <input type="text" id="to" ng-model="route.to" />
+                <input type="submit"  value="view Directions" id="get-route"/> <br>
+
+                <button id="createTripButton">Add to DB</button>
+       
+                
+                <div id="right-panel"></div>
             </md-sidenav>
         </div>
+        
     </div>
-    <div class="left-middle">
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2 ">
-            <h1>My Trips </h1>
-            <div class="tripCard">Trip Number One</div>
-            <div class="tripCard">Trip Number One</div>
-        </md-sidenav>
-    </div>
-    <div class="left-right">
+<!--     <div class="left-right">
         <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3 ">
-            <h1>My Campgrounds </h1>
-            <div class="spotCard">Spot Number One</div>
-            <div class="spotCard">Spot Number One</div>
+            <h1>Waypoint Names</h1>
+            <div class="spotCard"></div>
+            <div class="spotCard">Spot Number Two</div>
+            
         </md-sidenav>
-    </div>
-    <div class='right-half'>
+    </div> -->
+    <div class="right-half">
         <md-content flex id="content" >
             <div id="map"></div>
         </md-content>
