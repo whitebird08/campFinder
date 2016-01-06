@@ -1,6 +1,6 @@
 
 
-app.controller('HomeController', function($scope, $http, $location, userFactory){
+app.controller('HomeController', function($scope, $http, $location, userFactory, $sce){
   
   // $http.get("/campers/showTrips").then(function(res){
   //   console.log(res.data, 'resdata')
@@ -19,13 +19,18 @@ app.controller('HomeController', function($scope, $http, $location, userFactory)
   }, function(value){ 
       if (value == '/dash'){
         $http.get('/currentUser').then(function(res){
-
+ 
           $scope.dataStuff = res.data
           console.log(res.data, 'resdata');
         })
       }
 
   })
+
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsHtml(src);
+  }
+
 
   var currUser;
   //example of send request to your express route

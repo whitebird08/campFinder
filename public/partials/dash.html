@@ -7,7 +7,17 @@
             <div class="tripCard">Trip Number Two</div> -->
             <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips track by $index">
                <h1>Trip</h1>
-            	{{data}}
+            	Trip Title<p>{{data.tripName}}</p><br/>
+            	From<p>{{data.from}}</p><br/>
+            	To<p>{{data.to}}</p><br/>
+               
+               <button ng-click="showDirections = !showDirections">Toggle Directions</button>
+            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+            	 <p ng-bind-html="trustSrc(value)"></p>
+            		<!-- {{value}} -->
+
+            	</div>
+
             </div>
 
     <!-- <div id="grid" class="main">
