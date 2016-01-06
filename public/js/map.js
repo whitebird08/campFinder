@@ -137,10 +137,10 @@ function route(data, waypts) {
         } 
       }
       for (var i = 0; i < markersArray.length; i++){
-        console.log(markersArray[i].title, 'markersArray')  
+        // console.log(markersArray[i].title, 'markersArray')  
         // $('.markerLinks').append('<div>' + markersArray[i].title + '</div>' );
         $('.markerLinks').append('<a href="#">' + markersArray[i].title + '</a><br>' );
-        console.log(markersArray, 'markersArray')
+        // console.log(markersArray, 'markersArray')
 
       }  
       
@@ -192,17 +192,23 @@ function updateRoute(waypts){
               distance: tempArr1[i].distance.text,
               instructions: tempArr1[i].instructions
             })
-            console.log('updated Directions Arr', directionsArr);
+            // console.log('updated Directions Arr', directionsArr);
           }
       };
 
       $('#createTripButton').on('click', function(){
         console.log('dirArr', directionsArr);
-        $.ajax({
-          method: 'POST',
-          url: '../campers/addTrip',            
-          data: {tripName: $('#tripName').val(), to: $('#to').val(), from: $('#from').val(), directions: directionsArr}
-        });
+        if(directionsArr.length > 0){
+          $.ajax({
+            type: "POST",
+            url: "../campers/addTrip",
+            data: {tripName: $('#trip').val(), to: $('#to').val(), from: $('#from').val(), directions: directionsArr},
+            cache: false,
+            success: function(data){
+             if(data)console.log(data)
+            }
+          });
+        }
       })
       directionsRenderer.setDirections(result);
       directionsRenderer.setPanel(document.getElementById('right-panel'));

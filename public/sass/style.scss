@@ -489,7 +489,7 @@ float: left;
 
 /////
 
-.view {
+#preview.view {
   width: 316px;
   height: 216px;
   margin: 10px;
@@ -505,7 +505,7 @@ float: left;
   perspective: 500px;
 }
 
-.view .slice{
+#preview.view .slice{
   width: 60px;
   height: 100%;
   z-index: 100;
@@ -530,16 +530,16 @@ float: left;
     
 }
 
-.view div.view-back{
+#preview.view div.view-back{
   width: 50%;
   height: 100%;
   position: absolute;
   right: 0;
-  background: #666;
+  background: green;
   z-index: 0;
 }
 
-.view-back span {
+#preview.view-back span {
   display: block;
   float: right;
   padding: 5px 20px 5px;
@@ -549,14 +549,14 @@ float: left;
   color: rgba(255,255,255,0.6);
 }
 
-.view-back span:first-child {
+#preview.view-back span:first-child {
   padding-top: 20px;
 }
 
-.view-back a {
-  display: bock;
+#preview.view-back a {
+  display: back;
   font-size: 18px;
-  color: rgba(255,255,255,0.4);
+  color: #C8E6C9;
   position: absolute;
   right: 15px;
   bottom: 15px;
@@ -569,12 +569,12 @@ float: left;
   font-weight: 700;
 }
 
-.view-back a:hover {
-  color: #fff;
+#preview.view-back a:hover {
+  color: #C8E6C9;
   border-color: #fff;
 }
 
-.view-back span[data-icon]:before {
+#preview.view-back span[data-icon]:before {
     content: attr(data-icon);
     font-family: 'icons';
     color: #aaa;
@@ -583,33 +583,33 @@ float: left;
   padding-right: 5px;
 }
 
-.view .s2, 
-.view .s3, 
-.view .s4, 
-.view .s5 {
+#preview.view .s2, 
+#preview.view .s3, 
+#preview.view .s4, 
+#preview.view .s5 {
   -webkit-transform: translate3d(60px,0,0);
   -moz-transform: translate3d(60px,0,0);
   -o-transform: translate3d(60px,0,0);
   -ms-transform: translate3d(60px,0,0);
   transform: translate3d(60px,0,0);
 }
-.view .s1 {
+#preview.view .s1 {
   background-position: 0px 0px;
 }
-.view .s2 {
+#preview.view .s2 {
   background-position: -60px 0px;
 }
-.view .s3 {
+#preview.view .s3 {
   background-position: -120px 0px;
 }
-.view .s4 {
+#preview.view .s4 {
   background-position: -180px 0px;
 }
-.view .s5 {
+#preview.view .s5 {
   background-position: -240px 0px;
 }
 
-.view .overlay {
+#preview.view .overlay {
   width: 60px;
   height: 100%;
   opacity: 0;
@@ -621,11 +621,11 @@ float: left;
   transition: opacity 150ms ease-in-out;
 }
 
-.view:hover .overlay {
+#preview.view:hover .overlay {
   opacity: 1;
 }
 
-.view img {
+#preview.view img {
   position: absolute;
   z-index: 0;
   -webkit-transition: left 0.3s ease-in-out;

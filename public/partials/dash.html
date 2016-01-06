@@ -1,49 +1,47 @@
 <h1>My Trip Dashboard </h1>
 <button ng-click="logoutUser()">Log Out</button>
 <button><a href="/campgrounds">Make A Trip</a></button>
-
+<p style="color: red;">{{dataStuff}}</p>
 <h1>My Trips</h1>
-            <div class="tripCard">Trip Number One</div>
-            <div class="tripCard">Trip Number Two</div>
-            <div class="tripsInDash" ng-repeat="current in currentUserTrips.trips track by $index">
+           <!--  <div class="tripCard">Trip Number One</div>
+            <div class="tripCard">Trip Number Two</div> -->
+            <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips track by $index">
                <h1>Trip</h1>
-            	{{current.tripName}} <br/>
-            	{{current.route.to}}<br/>
-            	{{current.route.from}}
-
+            	{{data}}
             </div>
 
-    <div id="grid" class="main">
+    <!-- <div id="grid" class="main">
 		<div id="preview" class="view">
 			<div class="view-back">
-				<span data-icon="A">566</span>
-				<span data-icon="B">124</span>
+				<span data-icon="A">Denver, CO</span>
+				<span data-icon="B">Durango, CO</span>
 			</div>
-			<img src="images/campview.jpg" />
+			<img src="images/mapscreenshot3.jpg" />
 		</div>
 		<div id="preview" class="view">
 			<div class="view-back">
-				<span data-icon="A">210</span>
-				<span data-icon="B">102</span>
+				<span data-icon="A">Boulder, CO</span>
+				<span data-icon="B">Aspen, CO</span>
 			</div>
-			<img src="images/campview.jpg" />
+			<img src="images/mapscreenshot3.jpg" />
 		</div>
 		<div id="preview" class="view">
 			<div class="view-back">
-				<span data-icon="A">690</span>
-				<span data-icon="B">361</span>
+				<span data-icon="A">Grand Junction, CO</span>
+				<span data-icon="B">Holly, CO</span>
 			</div>
-			<img src="images/campview.jpg" />
+			<img src="images/mapscreenshot3.jpg" />
 		</div>
 		<div id="preview" class="view">
 			<div class="view-back">
-				<span data-icon="A">987</span>
-				<span data-icon="B">130</span>
+				<span data-icon="A">Estes Park, CO</span>
+				<span data-icon="B">Steamboat Springs, CO</span>
 			</div>
-			<img src="images/campview.jpg" />
+			<img src="images/mapscreenshot3.jpg" />
 		</div>
 	</div>
 </div>
+ -->
 <script type="text/javascript">	
 	
 	Modernizr.load({
@@ -59,4 +57,4 @@
 		}
 	});
 		
-</script>
+ </script>

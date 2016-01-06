@@ -2,9 +2,30 @@
 
 app.controller('HomeController', function($scope, $http, $location, userFactory){
   
-  $http.get("../showTrips").then(function(res){
-    $scope.currentUserTrips = res.data;
-  });
+  // $http.get("/campers/showTrips").then(function(res){
+  //   console.log(res.data, 'resdata')
+  //   $scope.currentUserTrips = res.data;
+  // });
+// $scope.$on('$routeChangeSuccess', function(next, current) { 
+//   if(userFactory.getUser() !== undefined && userFactory.getUser() !== null){
+//     $http.get('/showTrips').then(function(res){
+//       $scope.dataStuff = res.data;
+//       console.log('showTripsRes',res.data);
+//     })
+//   }
+// });
+  $scope.$watch(function(){
+     return $location.path();
+  }, function(value){ 
+      if (value == '/dash'){
+        $http.get('/currentUser').then(function(res){
+
+          $scope.dataStuff = res.data
+          console.log(res.data, 'resdata');
+        })
+      }
+
+  })
 
   var currUser;
   //example of send request to your express route
@@ -29,7 +50,7 @@ app.controller('HomeController', function($scope, $http, $location, userFactory)
   		console.log($scope.loginError);		
   		} else {
 		    userFactory.addUser(res.data.currentUser);
-			  console.log(userFactory.getUser());
+			  // console.log(userFactory.getUser());
   			$location.path("/dash");
   		}
   	})
@@ -64,38 +85,30 @@ app.controller('HomeController', function($scope, $http, $location, userFactory)
     })
   }
 
-  $scope.addNewTrip = function(tripName){
+  // $scope.addNewTrip = function(tripName){
 
-  var currentUser;
+  // var currentUser;
 
-    $http.get('../currentUser').then(function(res){
-      currentUser = res.data;
-      console.log('user', currentUser);
-      var temp = {};
-      temp.tripName = tripName;
-      temp.user = currentUser;
-      temp.route = $scope.route;
-      temp.waypoints = [];
-      return temp;
-    }).then(function(postObj){
+  //   $http.get('../currentUser').then(function(res){
+  //     currentUser = res.data;
+  //     console.log('user', currentUser);
+  //     var temp = {};
+  //     temp.tripName = tripName;
+  //     temp.user = currentUser;
+  //     temp.route = $scope.route;
+  //     temp.waypoints = [];
+  //     return temp;
+  //   }).then(function(postObj){
 
-      $http.post('../campers/addTrip', postObj).then(function(res){
-           console.log('res from post', res.data);
-           $scope.tripName = null;
-            $scope.route = null;
-           $location.path('/dash');
-      });
+  //     $http.post('../campers/addTrip', postObj).then(function(res){
+  //          console.log('res from post', res.data);
+  //          $scope.tripName = null;
+  //           $scope.route = null;
+  //          $location.path('/dash');
+  //     });
 
-    })
-
-
-
-    
-
-    
-
-
-  }
+  //   })
+  // }
     
 
 

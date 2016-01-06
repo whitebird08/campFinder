@@ -9,6 +9,31 @@ var parseString = require('xml2js').parseString;
 var bcrypt = require('bcrypt');
 
 
+
+// router.post('/campers/addTrip', function(req, res,next){
+//   console.log('in post addTrip', req.body);
+//          console.log(req.session.camper._id,'user id session');
+
+//not finished , in the middle of figuring out update
+//so we can add a tne trip to the trips array
+   //  campers.findOne({_id: req.session.camper._id}, function(err, doc){
+   //       doc.trips.push(req.body);
+   //   campers.update({_id:req.session.camper._id}, doc, function(err, doc){
+   //     res.json({error:err, doc:doc});
+   //   })
+   // })     
+// })
+
+router.post('/campers/addTrip', function(req,res,next){
+  campers.findOne({_id: req.session.id}, function(err, doc){
+         doc.trips.push(req.body);
+     campers.update({_id: req.session.id}, doc, function(err, doc){
+       res.json({error:err, doc:doc});
+     })
+   })     
+  
+})
+
 router.post('/campers/register', function(req,res,next){
 console.log('request',req.body);
 var hash = bcrypt.hashSync(req.body.password, 8)
@@ -27,7 +52,7 @@ router.post('/campers/login', function(req, res,next){
   campers.findOne({email:req.body.email}).then(function(camper){
     if (camper) {  
       if (bcrypt.compareSync(req.body.password, camper.password)){
-        req.session.camper = camper;
+        req.session.id = camper._id;
         var temp = {};
         temp._id = camper._id;
         temp.email = camper.email;
@@ -41,7 +66,9 @@ router.post('/campers/login', function(req, res,next){
 })
 
 router.get('/currentUser', function(req,res,next){
-  res.json(req.session.camper);
+  campers.findOne({_id: req.session.id}, function(err, doc){
+    res.json({user: doc, string: 'HI!!!'});
+  })
 })
 
 router.get('/campers/logout', function(req,res,next){
@@ -109,26 +136,22 @@ router.get('/parse', function(req, res, next) {
     }); 
 });
 
-router.post('/campers/addTrip', function(req, res,next){
-  console.log('in post addTrip', req.body);
-         console.log(req.session.camper._id,'user id session');
 
-//not finished , in the middle of figuring out update
-//so we can add a tne trip to the trips array
-    campers.findOne({_id: req.session.camper._id}, function(err, doc){
-         doc.trips.push(req.body);
-     campers.update({_id:req.session.camper._id}, doc, function(err, doc){
-       res.json({error:err, doc:doc});
-     })
-   })     
-})
 
-router.get("/showTrips", function(req, res, next){
-  var currentUser = req.session.camper;
-  campers.findOne({_id:currentUser._id}, function(err, doc){
-    res.json(doc);
-  })
-})
+// router.get('/campers/showTrips', function(req, res, next){
+//   console.log('somestring')
+  // var currentUser = req.session.camper;
+  // campers.findOne({_id:currentUser._id}, function(err, doc){
+  //   res.json(doc);
+  // })
+// })
+router.get('/showTrips', function(req, res, next){
+      var currentUser = req.session.camper;
+      console.log('currentUser', currentUser);
+      campers.findOne({_id:currentUser._id}, function(err, doc){
+      res.json(doc);
+    })
+});
 
 //* IMPORTANT * Keep this at the bottom * IMPORTANT *
 router.get('*', function(req, res, next) {
