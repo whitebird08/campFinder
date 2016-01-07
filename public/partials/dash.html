@@ -1,18 +1,18 @@
-<md-toolbar layout="row" >
+<!-- <md-toolbar layout="row" >
       <img src="/images/campsideTitle&LogoMedium.png" />
-</md-toolbar>
-
+</md-toolbar> -->
+<!-- 
 <div flex layout="row">
-<div class="middleGround">
+<div class="middleGround"> -->
 
-	<h1>My Trip Dashboard </h1>
+	<!-- <h1>My Trip Dashboard </h1>
 	<button ng-click="logoutUser()">Log Out</button>
 	<button><a href="/campgrounds">Make A Trip</a></button>
-	<h1>My Trips</h1>
+	<h1>My Trips</h1> -->
 	           <!--  <div class="tripCard">Trip Number One</div>
 	            <div class="tripCard">Trip Number Two</div> -->
-	            <label>Search For Trip</label>
-	            <input type="text" ng-model="search"/>
+	            <!-- <label>Search For Trip</label>
+	            <input type="text" ng-model="search"/> -->
 	            <!-- <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips | filter: search track by $index ">
 	               <h1>Trip</h1>
 	            	Trip Title<p>{{data.tripName}}</p><br/>
@@ -26,7 +26,7 @@
 	            	 <!-- </div>  -->
 
 	           <!-- </div>  --> 
-	    <div id="grid" class="main">
+	  <!--   <div id="grid" class="main">
 			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
 				<div class="tripsInDash" >
 					<div class="view-back">
@@ -43,7 +43,7 @@
 				</div>
 				<img src="images/mapscreenshot3.jpg" />
 			</div>
-			<div><h1>{{data.tripName}}</h1></div>
+			<div><h1>{{data.tripName}}</h1></div> -->
 
 
 			<!-- <div id="preview" class="view"> -->
@@ -67,11 +67,86 @@
 				</div>
 				<img src="images/mapscreenshot3.jpg" />
 			</div> -->
-		</div>
+<!-- 		</div>
 	</div>
 
 </div>
-</div>
+</div> -->
+
+<div id="o-wrapper" class="o-wrapper">
+
+  <main class="o-content">
+    <div class="o-container">  
+      <div class="c-buttons">
+        <button id="c-button--push-left" class="c-button">Push Left</button>
+        <img src="/images/mapscreenshot3.jpg" />
+      <div id="github-icons"></d	iv>
+
+    </div><!-- /o-container -->
+  </main><!-- /o-content -->
+
+</div><!-- /o-wrapper -->
+
+
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left c-menu--slide-right">
+  <button class="c-menu__close">&larr; Close Menu</button>
+  <!-- <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Services</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Work</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
+  </ul> -->
+
+      <div id="grid" class="main">
+  		<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
+  			<div class="tripsInDash" >
+  				<div class="view-back">
+  	               	<h1>Trip</h1>
+  	            	<span>{{data.tripName}}</span><br/>
+  	            	<span>{{data.from}}</span><br/>
+  	            	<span>{{data.to}}</span><br/>
+  	               	<button ng-click="showDirections = !showDirections">Toggle Directions</button>
+  	            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+  	            	<span ng-bind-html="trustSrc(value)"></span>
+  	            	</div>
+
+              	</div>
+  			</div>
+
+  			<img src="images/mapscreenshot3.jpg" />
+  	            <!-- 	<div><h1>Trip Name Goes Here</h1></div> -->
+  		</div>
+
+  	<!-- 	<div ng-repeat=data in dataStuff.user.trips><h1>{{data.tripName}}</h1></div> -->
+  		
+</nav><!-- /c-menu push-left -->
+
+
+
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+<!-- menus script -->
+<script src="js/menu.js"></script>
+
+<script>  
+  /**
+   * Push left instantiation and action.
+   */
+  var pushLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'push-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+  var pushLeftBtn = document.querySelector('#c-button--push-left');
+  
+  pushLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    pushLeft.open();
+  });
+  
+</script>
 
 <script type="text/javascript">	
 	
