@@ -1,57 +1,78 @@
-<h1>My Trip Dashboard </h1>
-<button ng-click="logoutUser()">Log Out</button>
-<button><a href="/campgrounds">Make A Trip</a></button>
-<p style="color: red;">{{dataStuff}}</p>
-<h1>My Trips</h1>
-           <!--  <div class="tripCard">Trip Number One</div>
-            <div class="tripCard">Trip Number Two</div> -->
-            <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips track by $index">
-               <h1>Trip</h1>
-            	Trip Title<p>{{data.tripName}}</p><br/>
-            	From<p>{{data.from}}</p><br/>
-            	To<p>{{data.to}}</p><br/>
-               
-               <button ng-click="showDirections = !showDirections">Toggle Directions</button>
-            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-            	 <p ng-bind-html="trustSrc(value)"></p>
-            		<!-- {{value}} -->
+<md-toolbar layout="row" >
+      <img src="/images/campsideTitle&LogoMedium.png" />
+</md-toolbar>
 
-            	</div>
+<div flex layout="row">
+<div class="middleGround">
 
-            </div>
+	<h1>My Trip Dashboard </h1>
+	<button ng-click="logoutUser()">Log Out</button>
+	<button><a href="/campgrounds">Make A Trip</a></button>
+	<h1>My Trips</h1>
+	           <!--  <div class="tripCard">Trip Number One</div>
+	            <div class="tripCard">Trip Number Two</div> -->
+	            <label>Search For Trip</label>
+	            <input type="text" ng-model="search"/>
+	            <!-- <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips | filter: search track by $index ">
+	               <h1>Trip</h1>
+	            	Trip Title<p>{{data.tripName}}</p><br/>
+	            	From<p>{{data.from}}</p><br/>
+	            	To<p>{{data.to}}</p><br/>
+	               
+	               <button ng-click="showDirections = !showDirections">Toggle Directions</button>
+	            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+	            	 <p ng-bind-html="trustSrc(value)"></p>
+	            		 {{value}} -->
+	            	 <!-- </div>  -->
 
-    <!-- <div id="grid" class="main">
-		<div id="preview" class="view">
-			<div class="view-back">
-				<span data-icon="A">Denver, CO</span>
-				<span data-icon="B">Durango, CO</span>
+	           <!-- </div>  --> 
+	    <div id="grid" class="main">
+			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
+				<div class="tripsInDash" >
+					<div class="view-back">
+		               	<h1>Trip</h1>
+		            	<span>{{data.tripName}}</span><br/>
+		            	<span>{{data.from}}</span><br/>
+		            	<span>{{data.to}}</span><br/>
+		               	<button ng-click="showDirections = !showDirections">Toggle Directions</button>
+		            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+		            	<span ng-bind-html="trustSrc(value)"></span>
+		            	</div>
+
+	            	</div>
+				</div>
+				<img src="images/mapscreenshot3.jpg" />
 			</div>
-			<img src="images/mapscreenshot3.jpg" />
-		</div>
-		<div id="preview" class="view">
-			<div class="view-back">
-				<span data-icon="A">Boulder, CO</span>
-				<span data-icon="B">Aspen, CO</span>
+			<div><h1>{{data.tripName}}</h1></div>
+
+
+			<!-- <div id="preview" class="view"> -->
+				<!-- <div class="view-back">
+					<span data-icon="A">Boulder, CO</span>
+					<span data-icon="B">Aspen, CO</span>
+				</div> -->
+				<!-- <img src="images/mapscreenshot3.jpg" /> -->
+			<!-- </div> -->
+			<!-- <div id="preview" class="view">
+				<div class="view-back">
+					<span data-icon="A">Grand Junction, CO</span>
+					<span data-icon="B">Holly, CO</span>
+				</div>
+				<img src="images/mapscreenshot3.jpg" />
 			</div>
-			<img src="images/mapscreenshot3.jpg" />
-		</div>
-		<div id="preview" class="view">
-			<div class="view-back">
-				<span data-icon="A">Grand Junction, CO</span>
-				<span data-icon="B">Holly, CO</span>
-			</div>
-			<img src="images/mapscreenshot3.jpg" />
-		</div>
-		<div id="preview" class="view">
-			<div class="view-back">
-				<span data-icon="A">Estes Park, CO</span>
-				<span data-icon="B">Steamboat Springs, CO</span>
-			</div>
-			<img src="images/mapscreenshot3.jpg" />
+			<div id="preview" class="view">
+				<div class="view-back">
+					<span data-icon="A">Estes Park, CO</span>
+					<span data-icon="B">Steamboat Springs, CO</span>
+				</div>
+				<img src="images/mapscreenshot3.jpg" />
+			</div> -->
 		</div>
 	</div>
+
 </div>
- -->
+</div>
+
 <script type="text/javascript">	
 	
 	Modernizr.load({

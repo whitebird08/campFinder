@@ -30,6 +30,7 @@ body {
   /*z-index: 200;*/
 }
 
+
 .photo {
   width: 80px;
   height: 53px;
@@ -530,13 +531,15 @@ float: left;
     
 }
 
-#preview.view div.view-back{
+#preview.view div.view-back {
   width: 50%;
   height: 100%;
   position: absolute;
   right: 0;
-  background: green;
+  background: #006500;
   z-index: 0;
+  max-height: 600px;
+  overflow: scroll;
 }
 
 #preview.view-back span {
@@ -547,6 +550,7 @@ float: left;
   text-align: right;
   font-size: 16px;
   color: rgba(255,255,255,0.6);
+ 
 }
 
 #preview.view-back span:first-child {
@@ -554,7 +558,7 @@ float: left;
 }
 
 #preview.view-back a {
-  display: back;
+  display: block;
   font-size: 18px;
   color: #C8E6C9;
   position: absolute;
@@ -581,6 +585,7 @@ float: left;
   color: rgba(255,255,255,0.2);
   text-shadow: 0 0 1px rgba(255,255,255,0.2);
   padding-right: 5px;
+
 }
 
 #preview.view .s2, 
@@ -634,3 +639,13 @@ float: left;
   -ms-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out;
 }
+
+
+.middleGround {
+  height: 80%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  background: green;
+}
+

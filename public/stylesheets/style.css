@@ -473,8 +473,10 @@ h1 {
   height: 100%;
   position: absolute;
   right: 0;
-  background: green;
-  z-index: 0; }
+  background: #006500;
+  z-index: 0;
+  max-height: 600px;
+  overflow: scroll; }
 
 #preview.view-back span {
   display: block;
@@ -489,7 +491,7 @@ h1 {
   padding-top: 20px; }
 
 #preview.view-back a {
-  display: back;
+  display: block;
   font-size: 18px;
   color: #C8E6C9;
   position: absolute;
@@ -562,5 +564,12 @@ h1 {
   -moz-transition: left 0.3s ease-in-out;
   -ms-transition: left 0.3s ease-in-out;
   transition: left 0.3s ease-in-out; }
+
+.middleGround {
+  height: 80%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  background: green; }
 
 /*# sourceMappingURL=style.css.map */
