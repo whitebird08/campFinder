@@ -1,0 +1,255 @@
+/*************************
+ * Menu overview.
+ */
+#dashTitle {
+  color: darkgreen;
+
+}
+
+.c-menu {
+  position: fixed;
+  z-index: 200;
+  background-color: green;
+  transition: transform 0.3s;
+}
+
+.c-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Close button resets.
+ */
+.c-menu__close {
+  color: #fff;
+  background-color: darkgreen;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/**
+ * Close button resets.
+ */
+/*.c-menu__close:focus {
+  outline: none;
+}*/
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+ */
+body.has-active-menu {
+  overflow: hidden;
+}
+
+/**
+ * Mask component
+ */
+
+.c-mask {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.c-mask.is-active {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+/*************************
+left and right menus
+*/
+
+.c-menu--push-left,
+.c-menu--push-right {
+  width: 100%;
+  height: 100%;
+  /*overflow-y: scroll;*/
+}
+
+@media all and (min-width: 320px) {
+
+  .c-menu--push-left,
+  .c-menu--push-right {
+    width: 1440px;
+  }
+}
+
+.c-menu--push-left .c-menu__item,
+.c-menu--push-right .c-menu__item {
+  display: block;
+  text-align: center;
+  border-top: solid 1px #b5dbe9;
+  border-bottom: solid 1px #3184a1;
+}
+
+.c-menu--push-left .c-menu__item:first-child,
+.c-menu--push-right .c-menu__item:first-child {
+  border-top: none;
+}
+
+.c-menu--push-left .c-menu__item:last-child,
+.c-menu--push-right .c-menu__item:last-child {
+  border-bottom: none;
+}
+
+.c-menu--push-left .c-menu__link,
+.c-menu--push-right .c-menu__link {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+}
+
+.c-menu--push-left .c-menu__close,
+.c-menu--push-right .c-menu__close {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+/******
+content out to the right
+*******/
+.c-content{
+  position: fixed;
+  z-index: 200;
+  background-color: green;
+  transition: transform 0.3s;
+}
+
+
+.c-content--push-outLeft,
+.c-content--push-right {
+  width: 100%;
+  height: 100%;
+
+  /*overflow-y: scroll;*/
+}
+
+@media all and (min-width: 320px) {
+
+  .c-content--push-outLeft,
+  .c-content--push-right {
+    width: 2880px;
+  }
+}
+
+.c-content--push-outLeft .c-content__item,
+.c-content--push-right .c-content__item {
+  display: block;
+  text-align: center;
+  border-top: solid 1px #b5dbe9;
+  border-bottom: solid 1px #3184a1;
+}
+
+.c-content--push-outLeft .c-content__item:first-child,
+.c-content--push-right .c-content__item:first-child {
+  border-top: none;
+}
+
+.c-content--push-outLeft .c-content__item:last-child,
+.c-content--push-right .c-content__item:last-child {
+  border-bottom: none;
+}
+
+.c-content--push-outLeft .c-content__link,
+.c-content--push-right .c-content__link {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+}
+
+.c-content--push-outLeft .c-content__close,
+.c-content--push-right .c-content__close {
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.c-content--push-outLeft {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+@media all and (min-width: 320px) {
+  .c-content--push-outLeft {
+    transform: translateX(0px);
+  }
+}
+
+.c-content--push-outLeft.is-active {
+  transform: translateX(1440);
+}
+
+/****
+end out to the right
+*****/
+
+/*********
+push left
+*/
+.c-menu--push-left {
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+@media all and (min-width: 320px) {
+  .c-menu--push-left {
+    transform: translateX(-1440px);
+  }
+}
+
+.c-menu--push-left.is-active {
+  transform: translateX(0);
+}
+
+
+
+/*
+Left & Right Push Menus - Wrapper States
+We need to also account for the wrapper being pushed 
+either to the left or right if a push menu is activated. 
+*/
+
+.o-wrapper.has-push-left {
+  transform: translateX(100%);
+}
+
+@media all and (min-width: 320px) {
+  .o-wrapper.has-push-left {
+    transform: translateX(1440px);
+  }
+}
+
+.o-wrapper.has-push-right {
+  transform: translateX(-100%);
+}
+
+@media all and (min-width: 320px) {
+  .o-wrapper.has-push-right {
+    transform: translateX(-1440px);
+  }
+}
+

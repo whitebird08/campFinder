@@ -32,7 +32,7 @@ body {
 
 h1 {
   padding: 10px;
-  color: green; }
+  color: darkgreen; }
 
 /*
 .left-left {
@@ -98,14 +98,15 @@ h1 {
 
 .main {
   width: 1440px;
-  height: 650px;
+  height: 550px;
   overflow: visible;
   padding-top: 50px;
+  max-height: 550px;
   /*box-shadow: 1px 1px 2px rgba(0,0,0,0.05);*/ }
 
 .view {
   width: 1440px;
-  height: 650px;
+  height: 550px;
   margin: 0px;
   float: left;
   position: relative;
@@ -311,8 +312,18 @@ h1 {
   /*padding-top:  40px;*/
   text-align: center;
   position: absolute;
-  top: 35%;
-  left: 44%; }
+  top: 25%;
+  left: 41%;
+  width: 200px; }
+
+.iconLogoMarker {
+  background-color: none;
+  /*padding-top:  40px;*/
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 41%;
+  width: 20px; }
 
 .two {
   transform: rotateY(40deg);
@@ -434,7 +445,7 @@ h1 {
   background: linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%); }
 
 #preview.view {
-  width: 316px;
+  width: 616px;
   height: 216px;
   margin: 10px;
   float: left;
@@ -572,141 +583,39 @@ h1 {
   position: absolute;
   background: green; }
 
-/*************************
- * Menu overview.
- */
-.c-menu {
-  position: fixed;
-  z-index: 200;
-  background-color: green;
-  transition: transform 0.3s; }
+.transparent-top {
+  background-color: blue;
+  opacity: 20%; }
 
-.c-menu__items {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
+.detailsLink {
+  color: red; }
 
-/**
- * Close button resets.
- */
-.c-menu__close {
-  color: #fff;
-  background-color: darkgreen;
-  font-size: 14px;
+.btn {
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  border-radius: 48px;
   border: none;
-  box-shadow: none;
-  border-radius: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer; }
+  outline: none;
+  border-radius: 90px;
+  height: 40px;
+  width: 40px; }
 
-/**
- * Close button resets.
- */
-.c-menu__close:focus {
-  outline: none; }
+.btn--primary {
+  background-color: #B8E986;
+  color: white; }
 
-/**
- * Body states.
- *
- * When a menu is active, we want to hide the overflows on the body to prevent
- * awkward document scrolling.
- */
-body.has-active-menu {
-  overflow: hidden; }
+  /*.btn--secondary {
+    background-color: #e9e9e9;
+    color: #4A4A4A; 
+}
+  .btn--big {
+    height: 48px;
+    border-radius: 2px; */
+/*}*/
+/*.topnotch {
+  border: 5px solid magenta;
 
-/**
- * Mask component
- */
-.c-mask {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  background-color: #000;
-  opacity: 0;
-  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s; }
-
-.c-mask.is-active {
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  transition: opacity 0.3s; }
-
-/*************************
-left and right menus
-*/
-.c-menu--push-left,
-.c-menu--push-rightp {
-  width: 100%;
-  height: 100%;
-  /*overflow-y: scroll;*/ }
-
-@media all and (min-width: 320px) {
-  .c-menu--push-left,
-  .c-menu--push-right {
-    width: 1440px; } }
-.c-menu--push-left .c-menu__item,
-.c-menu--push-right .c-menu__item {
-  display: block;
-  text-align: center;
-  border-top: solid 1px #b5dbe9;
-  border-bottom: solid 1px #3184a1; }
-
-.c-menu--push-left .c-menu__item:first-child,
-.c-menu--push-right .c-menu__item:first-child {
-  border-top: none; }
-
-.c-menu--push-left .c-menu__item:last-child,
-.c-menu--push-right .c-menu__item:last-child {
-  border-bottom: none; }
-
-.c-menu--push-left .c-menu__link,
-.c-menu--push-right .c-menu__link {
-  display: block;
-  padding: 12px 24px;
-  color: #fff; }
-
-.c-menu--push-left .c-menu__close,
-.c-menu--push-right .c-menu__close {
-  display: block;
-  padding: 12px 24px;
-  width: 100%; }
-
-/*********
-push left
-*/
-.c-menu--push-left {
-  top: 0;
-  left: 0;
-  transform: translateX(-100%); }
-
-@media all and (min-width: 320px) {
-  .c-menu--push-left {
-    transform: translateX(-1440px); } }
-.c-menu--push-left.is-active {
-  transform: translateX(0); }
-
-/*
-Left & Right Push Menus - Wrapper States
-We need to also account for the wrapper being pushed 
-either to the left or right if a push menu is activated. 
-*/
-.o-wrapper.has-push-left {
-  transform: translateX(100%); }
-
-@media all and (min-width: 320px) {
-  .o-wrapper.has-push-left {
-    transform: translateX(1440px); } }
-.o-wrapper.has-push-right {
-  transform: translateX(-100%); }
-
-@media all and (min-width: 320px) {
-  .o-wrapper.has-push-right {
-    transform: translateX(-1440px); } }
+  color:magenta;
+  height: 300px;
+}*/
 
 /*# sourceMappingURL=style.css.map */

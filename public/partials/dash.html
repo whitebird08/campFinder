@@ -1,3 +1,5 @@
+
+
 <!-- <md-toolbar layout="row" >
       <img src="/images/campsideTitle&LogoMedium.png" />
 </md-toolbar> -->
@@ -73,23 +75,27 @@
 </div>
 </div> -->
 
-<div id="o-wrapper" class="o-wrapper">
+<div id="o-wrapper" class="o-wrapper main-dash">
 
-  <main class="o-content">
+  <main id="c-content--push-outLeft" class="c-content c-content--push-outLeft o-content">
     <div class="o-container">  
       <div class="c-buttons">
+
         <button id="c-button--push-left" class="c-button">Push Left</button>
-        <img src="/images/mapscreenshot3.jpg" />
-      <div id="github-icons"></d	iv>
+        <h1>This is the Content that should go off to the right</h1>
+        <!-- <img src="/images/mapscreenshot3.jpg" /> -->
+      <div id="github-icons"></div>
 
     </div><!-- /o-container -->
   </main><!-- /o-content -->
 
 </div><!-- /o-wrapper -->
 
-
-<nav id="c-menu--push-left" class="c-menu c-menu--push-left c-menu--slide-right">
+<nav id="c-menu--push-left" class="c-menu c-menu--push-left">
+	<button ng-click="logoutUser()">Log Out</button>
+	<button><a href="/campgrounds">Make A Trip</a></button>
   <button class="c-menu__close">&larr; Close Menu</button>
+	
   <!-- <ul class="c-menu__items">
     <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
     <li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
@@ -99,6 +105,7 @@
   </ul> -->
 
       <div id="grid" class="main">
+      	<h1 id="dashTitle">My Trip Dashboard </h1>	
   		<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
   			<div class="tripsInDash" >
   				<div class="view-back">
@@ -114,7 +121,7 @@
               	</div>
   			</div>
 
-  			<img src="images/mapscreenshot3.jpg" />
+  			<!-- <img src="images/mapscreenshot3.jpg" /> -->
   	            <!-- 	<div><h1>Trip Name Goes Here</h1></div> -->
   		</div>
 

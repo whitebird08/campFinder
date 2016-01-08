@@ -1,5 +1,4 @@
 
-
 app.controller('HomeController', function($scope, $http, $location, userFactory, $sce){
   
   // $http.get("/campers/showTrips").then(function(res){
@@ -14,6 +13,8 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
 //     })
 //   }
 // });
+
+
   $scope.$watch(function(){
      return $location.path();
   }, function(value){ 
@@ -30,7 +31,6 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
   $scope.trustSrc = function(src) {
     return $sce.trustAsHtml(src);
   }
-
 
   var currUser;
   //example of send request to your express route

@@ -26,24 +26,29 @@
 	            	 <!-- </div>  -->
 
 	           <!-- </div>  --> 
-	    <div id="grid" class="main">
+	    <div id="grid" class="main view-back">
 			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
 				<div class="tripsInDash" >
 					<div class="view-back">
-		               	<h1>Trip</h1>
+		               	 
 		            	<span>{{data.tripName}}</span><br/>
 		            	<span>{{data.from}}</span><br/>
 		            	<span>{{data.to}}</span><br/>
-		               	<button ng-click="showDirections = !showDirections">Toggle Directions</button>
-		            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-		            	<span ng-bind-html="trustSrc(value)"></span>
+		               	
+		            	<!-- <div btn btn-primary ng-show="showDirections" ng-repeat="(key, value) in data" > -->
+		            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+</button>
+  	            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+  	            	<span ng-bind-html="trustSrc(value)"></span>
+		            	<!-- <span ng-bind-html="trustSrc(value)"></span> -->
 		            	</div>
 
 	            	</div>
 				</div>
 				<img src="images/mapscreenshot3.jpg" />
-			</div>
+				</div>
 			<div><h1>{{data.tripName}}</h1></div>
+
+			</div>
 
 
 			<!-- <div id="preview" class="view"> -->

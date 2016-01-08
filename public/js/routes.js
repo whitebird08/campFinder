@@ -5,15 +5,11 @@ app.config(function($routeProvider, $locationProvider){
    controller: 'HomeController'
  })
  .when('/dash', {
-   templateUrl: '/partials/dash.html',
+   templateUrl: '/partials/dash2.html',
    controller: 'HomeController'
  })
   .when('/campgrounds', {
    templateUrl: '/partials/campgrounds.html',
-   controller: 'HomeController'
- })
-  .when('/search', {
-   templateUrl: '/partials/search.html',
    controller: 'HomeController'
  })
    .otherwise({redirectTo:'/'});

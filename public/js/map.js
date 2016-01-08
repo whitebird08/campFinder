@@ -104,7 +104,12 @@ function route(data, waypts) {
             if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
               var marker = new google.maps.Marker({
                 position: data[j],
-                icon: '/images/markerWholeShadowSmall.png',
+                icon: 
+                    {      
+                        url: '/images/markerWholeSharp.svg',
+                        scaledSize: new google.maps.Size(60, 70)
+                        // anchor: new google.maps.Point(20, 58)
+                    },
 
                  // icon: 'http://www.googlemapsmarkers.com/v1/009900/',
                 title: data[j].facilityName        
