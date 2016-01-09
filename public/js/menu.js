@@ -58,15 +58,15 @@
 
 /*****out to the right 
 *******/
-  Menu.prototype._init = function() {
-    this.body = document.body;
-    this.wrapper = document.querySelector(this.options.wrapper);
-    this.mask = document.querySelector(this.options.maskId);
-    this.menu = document.querySelector('#c-content--' + this.options.type);
-    this.closeBtn = this.menu.querySelector('.c-content__close');
-    this.menuOpeners = document.querySelectorAll(this.options.menuOpenerClass);
-    this._initEvents();
-  };
+  // Menu.prototype._init = function() {
+  //   this.body = document.body;
+  //   this.wrapper = document.querySelector(this.options.wrapper);
+  //   this.mask = document.querySelector(this.options.maskId);
+  //   this.menu = document.querySelector('#c-content--' + this.options.type);
+  //   this.closeBtn = this.menu.querySelector('.c-content__close');
+  //   this.menuOpeners = document.querySelectorAll(this.options.menuOpenerClass);
+  //   this._initEvents();
+  // };
 /*****  end out to the right 
 *******/
 

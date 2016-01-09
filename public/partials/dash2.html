@@ -3,12 +3,12 @@
 </md-toolbar>
 
 <div flex layout="row">
+<!-- <img src="images/mapscreenshot3.jpg" /> -->
 <div class="middleGround">
-
 	<h1>My Trip Dashboard </h1>
 	<button ng-click="logoutUser()">Log Out</button>
 	<button><a href="/campgrounds">Make A Trip</a></button>
-	<h1>My Trips</h1>
+	<!-- <h1>My Trips</h1> -->
 	           <!--  <div class="tripCard">Trip Number One</div>
 	            <div class="tripCard">Trip Number Two</div> -->
 	            <label>Search For Trip</label>
@@ -26,57 +26,52 @@
 	            	 <!-- </div>  -->
 
 	           <!-- </div>  --> 
-	    <div id="grid" class="main view-back">
-			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="view">
-				<div class="tripsInDash" >
-					<div class="view-back">
-		               	 
-		            	<span>{{data.tripName}}</span><br/>
-		            	<span>{{data.from}}</span><br/>
-		            	<span>{{data.to}}</span><br/>
-		               	
-		            	<!-- <div btn btn-primary ng-show="showDirections" ng-repeat="(key, value) in data" > -->
-		            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+</button>
-  	            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-  	            	<span ng-bind-html="trustSrc(value)"></span>
-		            	<!-- <span ng-bind-html="trustSrc(value)"></span> -->
-		            	</div>
+	    <div id="gridDash" >
 
-	            	</div>
-				</div>
-				<img src="images/mapscreenshot3.jpg" />
-				</div>
-			<div><h1>{{data.tripName}}</h1></div>
 
+			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="tripsInDash" ng-class="expandClass ? 'expandCard' : 'none'" ng-click="expandClass = !expandClass">
+				
+		        <nav class="cardNav">
+		        </nav>       	 
+		        	<nav class="cardNav2">
+	            	<span class="cardTitle">{{data.tripName}}</span><br/>
+	            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+
+	            		
+	            		<!-- <ng-md-icon icon="open_with" style="fill:white" size="24px"></ng-md-icon> -->
+	            	</button>
+            	</nav>
+            		<ng-md-icon icon="event" style="fill:#727272" size="24px"></ng-md-icon>
+            		<span>July 22 to January 15</span>
+            		<br/>
+            		<ng-md-icon icon="home" style="fill:#727272" size="24px"></ng-md-icon>
+	            	<span>{{data.from}}</span><br/>
+
+
+	            	<ng-md-icon icon="place" style="fill:#727272" size="24px"></ng-md-icon>
+
+	            	<span>{{data.to}}</span><br/>
+            <!-- <span>{{data.tripName}}</span><br/>
+            	<span>{{data.from}}</span><br/>
+            	<span>{{data.to}}</span><br/> -->
+            		<ng-md-icon icon="link" style="fill:#727272" size="24px"></ng-md-icon>
+	            	<br/>
+            		<ng-md-icon icon="directions" style="fill:#727272" size="24px">Directions</ng-md-icon>
+           
+            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+            		<span ng-bind-html="trustSrc(value)"></span>
+
+ 
+            	</div>
+				</div>
 			</div>
+				
 
-
-			<!-- <div id="preview" class="view"> -->
-				<!-- <div class="view-back">
-					<span data-icon="A">Boulder, CO</span>
-					<span data-icon="B">Aspen, CO</span>
-				</div> -->
-				<!-- <img src="images/mapscreenshot3.jpg" /> -->
-			<!-- </div> -->
-			<!-- <div id="preview" class="view">
-				<div class="view-back">
-					<span data-icon="A">Grand Junction, CO</span>
-					<span data-icon="B">Holly, CO</span>
-				</div>
-				<img src="images/mapscreenshot3.jpg" />
-			</div>
-			<div id="preview" class="view">
-				<div class="view-back">
-					<span data-icon="A">Estes Park, CO</span>
-					<span data-icon="B">Steamboat Springs, CO</span>
-				</div>
-				<img src="images/mapscreenshot3.jpg" />
-			</div> -->
 		</div>
-	</div>
+			
+</div>
+</div>
 
-</div>
-</div>
+
 
 <script type="text/javascript">	
 	

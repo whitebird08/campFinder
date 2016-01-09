@@ -1,4 +1,4 @@
-var app = angular.module('campFinderApp', ['ngRoute']);
+var app = angular.module('campFinderApp', ['ngRoute', 'ngMdIcons']);
 app.factory('userFactory', function(){
   var currentUser;
     return {

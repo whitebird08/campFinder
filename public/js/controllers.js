@@ -1,5 +1,5 @@
 
-app.controller('HomeController', function($scope, $http, $location, userFactory, $sce){
+app.controller('HomeController', function($scope, $http, $location, userFactory, $sce, $route){
   
   // $http.get("/campers/showTrips").then(function(res){
   //   console.log(res.data, 'resdata')
@@ -115,8 +115,13 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
   //   })
   // }
     
-
-
+  
+    
+    $scope.expandCard = false;
+    $scope.growCard = function(){
+      $scope.expandCard = true;
+    }
+  
 
 
 
