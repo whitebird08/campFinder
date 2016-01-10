@@ -40,6 +40,7 @@
             		<div class="flexDiv2"><span class="cardTitle">{{data.tripName}}</span>
             		</div>
             	</div>
+ 
         	</nav>
         	<div class="floatButton">
             	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+
@@ -112,7 +113,7 @@
             		<br/>
             		<span class="secondaryText">
             			<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-    						<!-- <span ng-bind-html="trustSrc(value)"></span> -->
+    						<span ng-bind-html="trustSrc(value)"></span>
             			<!-- <hr></hr> -->
     					</div>
     				</span>

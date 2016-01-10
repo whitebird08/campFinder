@@ -1,0 +1,17 @@
+<div>
+				<h4 ng-if="registerError" class="error">{{registerError}}</h4>
+				<!-- <h1>Register</h1> -->
+				<form name="form" novalidate>
+					<label>Email
+					<input type="email" ng-model="userEmail" required>
+					</label><br/>
+
+					<label>Password
+					<input type="password" ng-model="userPassword" required>
+					</label><br/>
+
+					<button ng-click="loginUser(userEmail, userPassword)">Login</button>
+
+					<button ng-click="registerUser(userEmail, userPassword)">Register</button>
+				</form>
+				</div>
