@@ -1,18 +1,25 @@
 <md-toolbar layout="row">
-      <img src="/images/campsideTitle&LogoMedium.png" />
+    <img src="/images/campsideTitle&LogoMedium.png" />
+   <!--  <ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/> -->
+    <button><a href="/campgrounds">NEW TRIP</a></button>
+	<button ng-click="logoutUser()">LOGOUT</button>
+
 </md-toolbar>
 
 <div flex layout="row">
 <!-- <img src="images/mapscreenshot3.jpg" /> -->
 <div class="middleGround">
-	<!-- <h1>My Trip Dashboard </h1> -->	
-	<button ng-click="logoutUser()">Log Out</button>
-	<button><a href="/campgrounds">Make A Trip</a></button>
+	<!-- <h1>My Trip Dashboard </h1> -->
+
+	<ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/>
+
+<!-- 	<button><a href="/campgrounds">NEW TRIP</a></button>
+	<button ng-click="logoutUser()">LOGOUT</button> -->
 	<!-- <h1>My Trips</h1> -->
 	           <!--  <div class="tripCard">Trip Number One</div>
 	            <div class="tripCard">Trip Number Two</div> -->
-	            <label>Search For Trip</label>
-	            <input type="text" ng-model="search"/>
+	            <!-- <label>Search For Trip</label> -->
+	
 	            <!-- <div class="tripsInDash" ng-repeat="data in dataStuff.user.trips | filter: search track by $index ">
 	               <h1>Trip</h1>
 	            	Trip Title<p>{{data.tripName}}</p><br/>
@@ -111,9 +118,9 @@
         		<div class="flexDiv2">
             		<span class="primaryText">Directions</span>
             		<br/>
-            		<span class="secondaryText">
+            		<!-- <span class="secondaryText">
             			<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-    						<span ng-bind-html="trustSrc(value)"></span>
+    						<span ng-bind-html="trustSrc(value)"></span> -->
             			<!-- <hr></hr> -->
     					</div>
     				</span>

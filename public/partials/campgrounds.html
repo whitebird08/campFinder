@@ -1,5 +1,7 @@
 <md-toolbar layout="row" >
       <img src="/images/campsideTitle&LogoMedium.png" />
+      <button><a href="/dash">DASH</a> </button>
+      <button ng-click="logoutUser()">LOGOUT</button>
 </md-toolbar>
 
 <div flex layout="row">
@@ -17,8 +19,8 @@
         </md-sidenav>
     </div> -->
     <div class="left-middle">
-        <button ng-click="logoutUser()">Logout</button>
-        <button><a href="/dash">Dash</a> </button>
+        <!-- <button ng-click="logoutUser()">Logout</button> -->
+        <!-- <button><a href="/dash">Dash</a> </button> -->
         <h1 class="route">My Route </h1>
       
             <label>New Trip Name</label>
@@ -36,8 +38,7 @@
                 <input type="submit"  value="view Directions" id="get-route"/> <br>
 
                 <button id="createTripButton"><a href="/dash">Add to DB</a></button>
-       
-                
+                     
                 <div id="right-panel"></div>
             </md-sidenav>
         </div>
