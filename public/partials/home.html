@@ -1,4 +1,4 @@
-<!-- <div> -->
+
 	<!-- <span >
 		<button ng-click="register = !register;login = false;">Register</button>
 		<button ng-click="login = !login; register = false;">Login</button>
@@ -37,50 +37,40 @@
 		</div>
 	</span> -->
 
-<!-- </div> -->
+
 <!-- <br/> -->
 <div class="container">
 	<div id="grid" class="main">
 		<div class="view">
 
 			<div class="view-back">
-              <span class="loginSpan">
-		<button ng-click="register = !register;login = false;">Register</button>
-		<button ng-click="login = !login; register = false;">Login</button>
+              <span class="reg-log-span">
+				<!-- <button ng-click="register = !register;login = false;">Register</button>
+				<button ng-click="login = !login; register = false;">Login</button>
+ -->
+				<div>
+				<h4 ng-if="registerError" class="error">{{registerError}}</h4>
+				<!-- <h1>Register</h1> -->
+				<form name="form" novalidate>
+					<!-- <label>Email -->
+					<input type="email" ng-model="userEmail" placeholder="Email" required>
+					<!-- </label> -->
+					<br/>
 
-		<div ng-show="register" ng-init="register = false;">
-		<h4 ng-if="registerError" class="error">{{registerError}}</h4>
-		<h1>Register</h1>
-		<form name="form" novalidate>
-			<label>Email
-			<input type="email" ng-model="registerEmail" required>
-			</label><br/>
+					<!-- <label>Password -->
+					<input type="password" ng-model="userPassword" placeholder="Password" required>
+					<!-- </label> -->
+					<br/>
 
-			<label>Password
-			<input type="password" ng-model="registerPassword" required>
-			</label><br/>
+					<button class="login" ng-click="registerUser(userEmail, userPassword)">REGISTER</button>
 
-			<button ng-click="registerUser(registerEmail, registerPassword)">Register</button>
-		</form>
-		</div>
+					<button class="login" ng-click="loginUser(userEmail, userPassword)">LOGIN</button>
+				</form>
+				</div>
 
-		<div ng-show="login" ng-init="login = false;">
-		<h4 ng-if="loginError" class="error">{{loginError}}</h4>
-		<h1>Log In</h1>
-		<form name="form" novalidate>
-			<label>Email
-			<input type="email" ng-model="loginEmail" required>
-			</label><br/>
 
-			<label>Password
-			<input type="password" ng-model="loginPassword" required>
-			</label><br/>
 
-			<button ng-disabled="form.$invalid" ng-click="loginUser(loginEmail, loginPassword)">Log In</button>
-
-		</form>
-		</div>
-	</span>
+			</span>
 				<!-- <span >
 					<button ng-click="register = !register;login = false;">Register</button>
 					<button ng-click="login = !login; register = false;">Login</button>
@@ -171,7 +161,10 @@
 
 
 
+
+
 <script type="text/javascript">	
+
 	
 	Modernizr.load({
 		test: Modernizr.csstransforms3d && Modernizr.csstransitions,
@@ -187,70 +180,5 @@
 		}
 	});
 
-// $('#logoParentDiv').hover(function(){
-	// $('.s2').css("  
-	//  -webkit-transform: translate3d(287px,0,0) rotate3d(0,1,0,-45deg);
- //  -moz-transform: translate3d(287px,0,0) rotate3d(0,1,0,-45deg);
- //  -o-transform: translate3d(287px,0,0) rotate3d(0,1,0,-45deg);
- //  -ms-transform: translate3d(287px,0,0) rotate3d(0,1,0,-45deg);
- //  transform: translate3d(287px,0,0) rotate3d(0,1,0,-45deg);
- //  ")
-	// $('.s3, .s5').css("  
-	//  -webkit-transform: translate3d(287px,0,0) rotate3d(0,1,0,90deg);
- //  -moz-transform: translate3d(287px,0,0) rotate3d(0,1,0,90deg);
- //  -o-transform: translate3d(287px,0,0) rotate3d(0,1,0,90deg);
- //  -ms-transform: translate3d(287px,0,0) rotate3d(0,1,0,90deg);
- //  transform: translate3d(287px,0,0) rotate3d(0,1,0,90deg);
- //  ")
-	// $('.s4').css("  
-	//  -webkit-transform: translate3d(287px,0,0) rotate3d(0,1,0,-90deg);
- //  -moz-transform: translate3d(287px,0,0) rotate3d(0,1,0,-90deg);
- //  -o-transform: translate3d(287px,0,0) rotate3d(0,1,0,-90deg);
- //  -ms-transform: translate3d(287px,0,0) rotate3d(0,1,0,-90deg);
- //  transform: translate3d(287px,0,0) rotate3d(0,1,0,-90deg);
- //  ")
-
-	// $('.view .s1 > .overlay').css("  
- // background: -moz-linear-gradient(right, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
- //  background: -webkit-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
- //  background: -o-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
- //  background: -ms-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
- //  background: linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
- //  ")
-
-	// $('.view .s2 > .overlay').css("  
- // background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
- //  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
- //  background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
- //  background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
- //  background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%);
- //  ")
-
-	// $('.view .s3 > .overlay').css("  
- //  background: -moz-linear-gradient(right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
- //  background: -webkit-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
- //  background: -o-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
- //  background: -ms-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
- //  background: linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%);
- //  ")
-
-	// $('.view .s4 > .overlay').css("  
- //  background: -moz-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
- //  background: -webkit-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
- //  background: -o-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
- //  background: -ms-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
- //  background: linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);
- //  ")
-
-	// $('.view .s5 > .overlay').css("  
- //   background: -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
- //  background: -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
- //  background: -o-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
- //  background: -ms-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
- //  background: linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
- //  ")
-
-
-// })
 
 </script>

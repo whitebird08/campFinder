@@ -22,7 +22,7 @@
         <h1 class="route">My Route </h1>
       
             <label>New Trip Name</label>
-            <input id="trip" placeholder="trip name"/>
+            <input id="trip" placeholder="Trip Name"/>
         
         <div class="directions">
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
@@ -31,8 +31,8 @@
                 <!-- when you use a name with a dot after and then define a property name
                 in the ng-model , you generate a new object in $scope out of 
                 thin air -->
-                from <input type="text" id="from" ng-model="route.from" /> <br>
-                to <input type="text" id="to" ng-model="route.to" />
+                from <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
+                to <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
                 <input type="submit"  value="view Directions" id="get-route"/> <br>
 
                 <button id="createTripButton"><a href="/dash">Add to DB</a></button>
