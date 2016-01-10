@@ -408,6 +408,10 @@ $divider-color:        #B6B6B6
   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
   background: linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%); }
 
+.toolbarTextAndIcon {
+  /*height: 150px;*/
+  width: 200px; }
+
 .textLogo {
   z-index: 1000;
   /*color: white;*/
