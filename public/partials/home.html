@@ -44,43 +44,43 @@
 		<div class="view">
 
 			<div class="view-back">
-              <span class="loginSpan">
-		<button ng-click="register = !register;login = false;">Register</button>
-		<button ng-click="login = !login; register = false;">Login</button>
+              <!-- <span class="loginSpan"> -->
+				<button ng-click="register = !register;login = false;">Register</button>
+				<button ng-click="login = !login; register = false;">Login</button>
 
-		<div ng-show="register" ng-init="register = false;">
-		<h4 ng-if="registerError" class="error">{{registerError}}</h4>
-		<h1>Register</h1>
-		<form name="form" novalidate>
-			<label>Email
-			<input type="email" ng-model="registerEmail" required>
-			</label><br/>
+				<div ng-show="register" ng-init="register = false;">
+				<h4 ng-if="registerError" class="error">{{registerError}}</h4>
+				<h1>Register</h1>
+				<form name="form" novalidate>
+					<label>Email
+					<input type="email" ng-model="registerEmail" required>
+					</label><br/>
 
-			<label>Password
-			<input type="password" ng-model="registerPassword" required>
-			</label><br/>
+					<label>Password
+					<input type="password" ng-model="registerPassword" required>
+					</label><br/>
 
-			<button ng-click="registerUser(registerEmail, registerPassword)">Register</button>
-		</form>
-		</div>
+					<button ng-click="registerUser(registerEmail, registerPassword)">Register</button>
+				</form>
+				</div>
 
-		<div ng-show="login" ng-init="login = false;">
-		<h4 ng-if="loginError" class="error">{{loginError}}</h4>
-		<h1>Log In</h1>
-		<form name="form" novalidate>
-			<label>Email
-			<input type="email" ng-model="loginEmail" required>
-			</label><br/>
+				<div ng-show="login" ng-init="login = false;">
+				<h4 ng-if="loginError" class="error">{{loginError}}</h4>
+				<h1>Log In</h1>
+				<form name="form" novalidate>
+					<label>Email
+					<input type="email" ng-model="loginEmail" required>
+					</label><br/>
 
-			<label>Password
-			<input type="password" ng-model="loginPassword" required>
-			</label><br/>
+					<label>Password
+					<input type="password" ng-model="loginPassword" required>
+					</label><br/>
 
-			<button ng-disabled="form.$invalid" ng-click="loginUser(loginEmail, loginPassword)">Log In</button>
+					<button ng-disabled="form.$invalid" ng-click="loginUser(loginEmail, loginPassword)">Log In</button>
 
-		</form>
-		</div>
-	</span>
+				</form>
+				</div>
+			<!-- </span> -->
 				<!-- <span >
 					<button ng-click="register = !register;login = false;">Register</button>
 					<button ng-click="login = !login; register = false;">Login</button>

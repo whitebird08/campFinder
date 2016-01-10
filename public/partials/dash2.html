@@ -1,4 +1,4 @@
-<md-toolbar layout="row" >
+<md-toolbar layout="row">
       <img src="/images/campsideTitle&LogoMedium.png" />
 </md-toolbar>
 
@@ -25,48 +25,139 @@
 	            		 {{value}} -->
 	            	 <!-- </div>  -->
 
-	           <!-- </div>  --> 
-	    <div id="gridDash" >
-
-
-			<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="tripsInDash" ng-class="expandClass ? 'expandCard' : 'none'" ng-click="expandClass = !expandClass">
-				
-		        <nav class="cardNav">
-		        </nav>       	 
-		        	<nav class="cardNav2">
-	            	<span class="cardTitle">{{data.tripName}}</span><br/>
-	            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+
-	            		
-	            		<!-- <ng-md-icon icon="open_with" style="fill:white" size="24px"></ng-md-icon> -->
-	            	</button>
-            	</nav>
-            		<ng-md-icon icon="event" style="fill:#727272" size="24px"></ng-md-icon>
-            		<span>July 22 to January 15</span>
-            		<br/>
-            		<ng-md-icon icon="home" style="fill:#727272" size="24px"></ng-md-icon>
-	            	<span>{{data.from}}</span><br/>
-
-
-	            	<ng-md-icon icon="place" style="fill:#727272" size="24px"></ng-md-icon>
-
-	            	<span>{{data.to}}</span><br/>
-            <!-- <span>{{data.tripName}}</span><br/>
-            	<span>{{data.from}}</span><br/>
-            	<span>{{data.to}}</span><br/> -->
-            		<ng-md-icon icon="link" style="fill:#727272" size="24px"></ng-md-icon>
-	            	<br/>
-            		<ng-md-icon icon="directions" style="fill:#727272" size="24px">Directions</ng-md-icon>
-           
+	           <!-- </div>   -->
+	<div id="gridDash">
+	    	
+		<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="tripsInDash" ng-class="expandClass ? 'expandCard' : 'none'" ng-click="expandClass = !expandClass">
+			
+	        <nav class="cardNav">
+	        </nav> 
+	        
+	        <nav class="cardNav2">
+       
+            	<div class="flexbox-container">
+            		<div class="flexDiv"><ng-md-icon icon="description" style="fill:none" size="32px"></ng-md-icon></div>
+            		<div class="flexDiv2"><span class="cardTitle">{{data.tripName}}</span>
+            		</div>
+            	</div>
+        	</nav>
+        	<div class="floatButton">
+            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+
             	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-            		<span ng-bind-html="trustSrc(value)"></span>
+        			<span ng-bind-html="trustSrc(value)">{{value}}</span>
+        		</div>
+        		</button>
+        	</div>	
+        	
+	        <div class="flexbox-container">
+        		<div class="flexDiv">
+        			<ng-md-icon icon="event" style="fill:#727272" size="32px"></ng-md-icon>
+        		</div>
+        		<div class="flexDiv2">
+        			<span class="primaryText">Dates</span>
+        			<br/>
+        			<span class="secondaryText">July 22 to January 15</span>
+        		</div>
+        	</div>
+        	<hr></hr> 
+
+
+        	<div class="flexbox-container">
+        		<div class="flexDiv">
+        			<ng-md-icon icon="home" style="fill:#727272" size="32px"></ng-md-icon>
+        		</div>
+        		<div class="flexDiv2">
+        			<span class="primaryText">From</span>
+        			<br/>
+        			<span class="secondaryText">{{data.from}}</span>
+        		</div>
+        	</div>
+        	<hr></hr>
+
+
+        	<div class="flexbox-container">
+        		<div class="flexDiv">
+        			<ng-md-icon icon="place" style="fill:#727272" size="32px"></ng-md-icon>
+        		</div>
+
+        		<div class="flexDiv2">
+            		<span class="primaryText">To</span>
+            		<br/>
+            		<span class="secondaryText">{{data.to}}</span>
+            	</div>
+        	</div>
+        	<hr></hr> 
+
+        	<div class="flexbox-container">
+        		<div class="flexDiv">
+        			<ng-md-icon icon="link" style="fill:#727272" size="32px"></ng-md-icon>
+        		</div>
+
+        		<div class="flexDiv2">
+            		<span class="primaryText">Reserve</span>
+            		<br/>
+            		<span class="secondaryText"><a href="
+    		http://www.reserveamerica.com/unifSearch.do?tti=Search">Make a Reservation</a></span>
+            	</div>
+        	</div>
+        	<hr></hr> 
+
+        	<div class="flexbox-container">
+        		<div class="flexDiv">
+        			<ng-md-icon icon="directions" style="fill:#727272" size="32px"></ng-md-icon>
+        		</div>
+
+        		<div class="flexDiv2">
+            		<span class="primaryText">Directions</span>
+            		<br/>
+            		<span class="secondaryText">
+            			<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+    						<!-- <span ng-bind-html="trustSrc(value)"></span> -->
+            			<!-- <hr></hr> -->
+    					</div>
+    				</span>
+            	</div>
+        	</div>
+               	  
+        		<!-- <ng-md-icon icon="event" style="fill:#727272" size="24px"></ng-md-icon>
+        		<span class="primaryText">Dates</span><br/>
+        		<span class="secondaryText">July 22 to January 15</span>
+        		<! <br/> -->
+        		<!-- <hr></hr> -->
+            	<!-- <br/> -->
+        		<!-- <ng-md-icon icon="home" style="fill:#727272" size="24px"></ng-md-icon> -->
+            	<!-- <span>{{data.from}}</span> -->
+            	<!-- <br/> -->
+            	<!-- <hr></hr> -->
+            	
+
+            	<!-- <ng-md-icon icon="place" style="fill:#727272" size="24px"></ng-md-icon> -->
+
+            	<!-- <span>{{data.to}}</span> -->
+            	
+            	<!-- <hr></hr> -->
+            	
+     <!--    <span>{{data.tripName}}</span><br/>
+        	<span>{{data.from}}</span><br/>
+            	<span>{{data.to}}</span><br/> -->
+	         <!--    		<ng-md-icon icon="link" style="fill:#727272" size="24px"></ng-md-icon><a href="
+	            		http://www.reserveamerica.com/unifSearch.do?tti=Search">Make a Reservation</a>
+		            	
+		            	<hr></hr> 
+		            	
+	            		<ng-md-icon icon="directions" style="fill:#727272" size="24px">Directions</ng-md-icon>
+	           
+	            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
+	            		<span ng-bind-html="trustSrc(value)"></span> -->
 
  
-            	</div>
-				</div>
-			</div>
+            	<!-- </div> -->
+
+				<!-- </div> -->
+		</div>
 				
 
-		</div>
+	</div>
 			
 </div>
 </div>

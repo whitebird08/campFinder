@@ -121,7 +121,8 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
     $scope.growCard = function(){
       $scope.expandCard = true;
     }
-  
+    
+
 
 
 
