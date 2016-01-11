@@ -119,15 +119,15 @@ function route(data, waypts) {
               
 
               var contentString = '<div id="content">'+
-                '<h1>' + data[j].facilityName + '</h1>' +
-                "<div class='photo'><img src='http://www.reserveamerica.com" + data[j].photo + "'/></div>" +
+                '<h1 class="infoWindow">' + data[j].facilityName + '</h1>' +
+                // "<div class='photo'><img src='http://www.reserveamerica.com" + data[j].photo + "'/></div>" +
                 // '<div>' + data[j].available + '</div>' +
                 // '<div>' + data[j].amps + '</div>' +
                 // '<div>' + data[j].pets + '</div>' +
                 // '<div>' + data[j].sewerHookups + '</div>' +
                 // '<div>' + data[j].waterHookups + '</div>' +
                 // '<div>' + data[j].waterFront + '</div>' +
-                "<button id='journey' name='" + data[j].facilityName + "' value='" + data[j].lat + "," + data[j].lng + "'>Add as waypoint</button>"  +
+                "<button id='journey' name='" + data[j].facilityName + "' value='" + data[j].lat + "," + data[j].lng + "'>ADD</button>"  +
                 '</div>';
 
               google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 

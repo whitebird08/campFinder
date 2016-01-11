@@ -3,11 +3,10 @@
    <!--  <ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/> -->
     <button><a href="/campgrounds">NEW TRIP</a></button>
 	<button ng-click="logoutUser()">LOGOUT</button>
-
+	<!-- <ng-md-icon icon="search" class="searchIcon" style="fill:#4CAF50" size="32px"></ng-md-icon><input class="searchBox" type="text" ng-model="search" placeholder="SEARCH"/> -->
 </md-toolbar>
 
 <div flex layout="row">
-<!-- <img src="images/mapscreenshot3.jpg" /> -->
 <div class="middleGround">
 	<!-- <h1>My Trip Dashboard </h1> -->
 
@@ -31,7 +30,6 @@
 	            	 <p ng-bind-html="trustSrc(value)"></p>
 	            		 {{value}} -->
 	            	 <!-- </div>  -->
-
 	           <!-- </div>   -->
 	<div id="gridDash">
 	    	
@@ -50,10 +48,13 @@
  
         	</nav>
         	<div class="floatButton">
-            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">+
-            	<div ng-show="showDirections" ng-repeat="(key, value) in data" >
-        			<span ng-bind-html="trustSrc(value)">{{value}}</span>
-        		</div>
+            	<button class="btn btn--primary" ng-click="showDirections = !showDirections"><ng-md-icon icon="directions" style="fill:#2E7D32" size="32px" class="dirIcon"></ng-md-icon>
+            	
+	            		<!-- <div class="dirBox"> -->
+	            	<div class="showDir" ng-show="showDirections" ng-repeat="(key, value) in data" >
+	        			<span ng-bind-html="trustSrc(value)">{{value}}</span>
+	        			<!-- </div> -->
+        			</div>
         		</button>
         	</div>	
         	
@@ -82,7 +83,6 @@
         	</div>
         	<hr></hr>
 
-
         	<div class="flexbox-container">
         		<div class="flexDiv">
         			<ng-md-icon icon="place" style="fill:#727272" size="32px"></ng-md-icon>
@@ -108,24 +108,24 @@
     		http://www.reserveamerica.com/unifSearch.do?tti=Search">Make a Reservation</a></span>
             	</div>
         	</div>
-        	<hr></hr> 
+        	<!-- <hr></hr>  -->
 
-        	<div class="flexbox-container">
+        	<!-- <div class="flexbox-container">
         		<div class="flexDiv">
         			<ng-md-icon icon="directions" style="fill:#727272" size="32px"></ng-md-icon>
         		</div>
 
         		<div class="flexDiv2">
             		<span class="primaryText">Directions</span>
-            		<br/>
+            		<br/> -->
             		<!-- <span class="secondaryText">
             			<div ng-show="showDirections" ng-repeat="(key, value) in data" >
     						<span ng-bind-html="trustSrc(value)"></span> -->
             			<!-- <hr></hr> -->
-    					</div>
-    				</span>
-            	</div>
-        	</div>
+    					<!-- </div> -->
+    				<!-- </span> -->
+            	<!-- </div> -->
+        	<!-- </div> -->
                	  
         		<!-- <ng-md-icon icon="event" style="fill:#727272" size="24px"></ng-md-icon>
         		<span class="primaryText">Dates</span><br/>

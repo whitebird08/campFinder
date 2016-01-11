@@ -1,6 +1,7 @@
+require('dotenv').load();
 var express = require('express');
 var router = express.Router();
-var db = require('monk')('localhost/campFinder-db');
+var db = require('monk')(process.env.MONGOLAB_URI);
 var campgrounds = db.get('campgrounds');
 var sites = db.get('sites');
 var campers = db.get('campers');

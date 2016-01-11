@@ -8,7 +8,6 @@
 <div flex layout="row">
     <div class="myPanels">
        
-
 <!--     <div class="left-left">
         <md-sidenav md-is-locked-open="true" class="md-whiteframe-z5 ">
             <h1>This Trip </h1>
@@ -22,11 +21,19 @@
     <div class="left-middle">
         <!-- <button ng-click="logoutUser()">Logout</button> -->
         <!-- <button><a href="/dash">Dash</a> </button> -->
-        <h1 class="route">My Route </h1>
+        <!-- <h1 class="route">My Route </h1> -->
       
-            <label>New Trip Name</label>
-            <input id="trip" placeholder="Trip Name"/>
+            <!-- <label>New Trip Name</label> --> 
+
         
+        <input id="trip" placeholder="Trip Name"/>
+        <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
+
+        <label for="from">Start Date</label>
+        <input type="text" id="from" name="from">
+        <label for="to">End Date</label>
+        <input type="text" id="to" name="to">
+
         <div class="directions">
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
                 Campgrounds within 
@@ -36,7 +43,7 @@
                 thin air -->
                 from <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
                 to <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
-                <input type="submit"  value="view Directions" id="get-route"/> <br>
+                <input type="submit"  value="View Directions" id="get-route"/> <br>
 
                 <button id="createTripButton"><a href="/dash">Add to DB</a></button>
                      
@@ -67,3 +74,24 @@
 	$('#')
 
 </script>
+
+<script>
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  </script>

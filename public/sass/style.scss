@@ -29,7 +29,6 @@ body {
   /*z-index: 200;*/
 }
 
-
 .photo {
   width: 80px;
   height: 53px;
@@ -74,7 +73,7 @@ color:#2E7D32;
 */  
   background: #C8E6C9;
   /*overflow-y: scroll;*/
-   /*box-shadow: 5px 5px 5px rgba(0,0,0,0.25), 5px 5px 5px rgba(0,0,0,0.22);*/
+   box-shadow: 5px 5px 5px rgba(0,0,0,0.25), 5px 5px 5px rgba(0,0,0,0.22);
   /*z-index:400;*/
 }
 /*.left-right {
@@ -121,7 +120,7 @@ color:#2E7D32;
   /*background-color:  #B8E986;*/
   background-color:  white;
   width: 400px;
-  height:300px;
+  height:425px;
   margin: 20px;
   float: left;
   box-shadow: 12px 12px 12px rgba(0,0,0,0.25), 12px 12px 12px rgba(0,0,0,0.22);
@@ -138,8 +137,9 @@ color:#2E7D32;
 .cardNav2{
 
   width:100%;
-  height:80px;
+  height:150px;
   background-color: #4CAF50;
+
 
 
 }
@@ -147,6 +147,7 @@ color:#2E7D32;
 .cardTitle {
   color:white;
   font-size: 36px;
+
   /*padding:50px;*/
 
 }
@@ -159,6 +160,12 @@ color:#2E7D32;
   color:#727272;
   /*margin:50px;*/
 }
+/*.secondaryText:hover 
+{
+     color:#727272; 
+     text-decoration:none; 
+     cursor:pointer;  
+}*/
 
 .cardIcon {
   fill:#727272;
@@ -190,7 +197,7 @@ hr {
 .flexDiv2 {
   /*background-color: blue;*/
   /*width: 90%;*/
-  /*padding:20px;*/
+  margin-right:20px;
 }
 .flexbox-container {
   display: -ms-flex;
@@ -221,9 +228,28 @@ $divider-color:        #B6B6B6
 
 .expandCard {
   background-color:#C8E6C9;
-  width:600px;
-  height:400px;
+  width:750px;
+  height:425px;
   position: center;
+    .flexDiv2.secondaryText {
+      width:30%;
+      border:5px solid red;
+    }
+    .showDir{
+      background-color: white;
+      color:#212121;
+      /*border: 2px solid goldenrod;*/
+      margin-right: -250px;
+      margin-left:-150px;
+      text-align: left;
+      max-height: 200px;
+      overflow-x:scroll;
+    }
+/*    .dirBox{
+      width: 300px;
+      height: 300px;
+      border:2px solid blue;
+    } */
 
 }
 .spotCard {
@@ -815,12 +841,14 @@ float: left;
 
 .floatButton {
   margin-top:-20px;
-  margin-left: 75%;
+  margin-left: 60%;
   margin-bottom: -20px;
 /*  max-height: 300px;
   overflow-x: scroll;*/
 }
-
+.dirIcon{
+  display: flex;
+}
 
 .btn {
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
@@ -938,3 +966,36 @@ button:hover {
           transform: translateY(-3px);
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:white; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+.searchBox {
+  height:50px;
+  margin:none;
+}
+
+h1.infoWindow  {
+color:white;
+background-color: #4CAF50;
+/*background: url(https://images.unsplash.com/photo-1445308394109-4ec2920981b1?crop=entropy&dpr=0.67&fit=crop&fm=jpg&h=2275&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=4325);*/
+width:200px;
+height:100px;
+/*margin: none;*/
+}
+
+/*.datepickerdemoBasicUsage {
+  * Demo styles for mdCalendar.  
+  color:magenta; 
+}*/
+  
+
