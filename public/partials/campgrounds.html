@@ -29,10 +29,10 @@
         <input id="trip" placeholder="Trip Name"/>
         <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
 
-        <label for="from">Start Date</label>
+       <!--  <label for="from">Start Date</label>
         <input type="text" id="from" name="from">
         <label for="to">End Date</label>
-        <input type="text" id="to" name="to">
+        <input type="text" id="to" name="to"> -->
 
         <div class="directions">
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
@@ -75,23 +75,23 @@
 
 </script>
 
-<script>
-  $(function() {
-    $( "#from" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 3,
-      onClose: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
-    });
-    $( "#to" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 3,
-      onClose: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-    });
-  });
-  </script>
+ <script>
+//   $(function() {
+//     $( "#from" ).datepicker({
+//       defaultDate: "+1w",
+//       changeMonth: true,
+//       numberOfMonths: 3,
+//       onClose: function( selectedDate ) {
+//         $( "#to" ).datepicker( "option", "minDate", selectedDate );
+//       }
+//     });
+//     $( "#to" ).datepicker({
+//       defaultDate: "+1w",
+//       changeMonth: true,
+//       numberOfMonths: 3,
+//       onClose: function( selectedDate ) {
+//         $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+//       }
+//     });
+//   });
+//   </script>
