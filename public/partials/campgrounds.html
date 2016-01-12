@@ -28,24 +28,29 @@
         
         <input id="trip" placeholder="Trip Name"/>
         <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
-
+        <!-- <br/>
+        <hr/> -->
         <!-- <label for="from">Start Date</label> -->
-        <input  type="text" id="startDate" name="from" ng-model="route.startDate" placeholder="Start Date">
+        <input type="text" id="startDate" name="from" ng-model="route.startDate" placeholder="Start Date">
         <!-- <label for="to">End Date</label> -->
-        <input  type="text" id="endDate" name="to" ng-model="route.endDate" placeholder="End Date">
+
+
+
+        <input type="text" id="endDate" name="to" ng-model="route.endDate" placeholder="End Date">
 
         <div class="directions">
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
-                Campgrounds within 
-                <input type="text" id="distance" value="5" size="2"> miles of the route <br>
+                
+                <input type="text" id="distance" placeholder="Range" value="5" size="2">
+                <!-- <br>  -->
                 <!-- when you use a name with a dot after and then define a property name
                 in the ng-model , you generate a new object in $scope out of 
                 thin air -->
-                from <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
-                to <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
-                <input type="submit"  value="View Directions" id="get-route"/> <br>
+                <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
+                <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
+                <button type="submit"  value="View Directions" id="get-route">View Route</button> <br>
 
-                <button id="createTripButton"><a href="/dash">Add to DB</a></button>
+                <button id="createTripButton"><a href="/dash">Save Trip</a></button>
                      
                 <div id="right-panel"></div>
             </md-sidenav>
@@ -75,15 +80,15 @@
         $( "#startDate" ).datepicker({
           defaultDate: "+1w",
           changeMonth: true,
-          numberOfMonths: 2,
+          numberOfMonths: 1,
           onClose: function( selectedDate ) {
             $( "#endDate" ).datepicker( "option", "minDate", selectedDate );
           }
         });
-        $( "#endDate" ).datepicker({
+        $( "#endDate").datepicker({
           defaultDate: "+1w",
           changeMonth: true,
-          numberOfMonths: 2,
+          numberOfMonths: 1,
           onClose: function( selectedDate ) {
             $( "#startDate" ).datepicker( "option", "maxDate", selectedDate );
           }

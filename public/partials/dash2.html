@@ -1,10 +1,12 @@
 <md-toolbar layout="row">
+
     <img class="toolbarTextAndIcon" src="/images/campsideTextAndIcon.svg" />
    <!--  <ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/> -->
     <button><a href="/campgrounds">NEW TRIP</a></button>
 	<button ng-click="logoutUser()">LOGOUT</button>
 	<ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon>
-	<input id="search" type="text" ng-model="search" placeholder="SEARCH"/>
+	<input id="search"  type="text" ng-model="search" placeholder="">
+	 <!-- <img class="toolbarTextAndIcon" src="/images/campsideTextAndIcon.svg" />	 -->
 	<!-- <ng-md-icon icon="search" class="searchIcon" style="fill:#4CAF50" size="32px"></ng-md-icon><input class="searchBox" type="text" ng-model="search" placeholder="SEARCH"/> -->
 </md-toolbar>
 
@@ -34,10 +36,11 @@
 	            	 <!-- </div>  -->
 	           <!-- </div>   -->
 	<div id="gridDash">
-	    	
+	    
 		<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="tripsInDash" ng-class="expandClass ? 'expandCard' : 'none'" ng-click="expandClass = !expandClass">
-		
+
 	        <nav class="cardNav">
+
 	        </nav> 
 	        
 	        <nav class="cardNav2">
