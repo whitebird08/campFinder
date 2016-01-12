@@ -14,7 +14,6 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
 //   }
 // });
 
-
   $scope.$watch(function(){
      return $location.path();
   }, function(value){ 
@@ -22,7 +21,7 @@ app.controller('HomeController', function($scope, $http, $location, userFactory,
         $http.get('/currentUser').then(function(res){
  
           $scope.dataStuff = res.data
-          console.log(res.data, 'resdata');
+          console.log(res.data, 'resdata from scope dot watch');
         })
       }
 

@@ -30,9 +30,9 @@
         <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
 
         <!-- <label for="from">Start Date</label> -->
-        <input class="dateStyle" type="text" id="from" name="from" placeholder="Start Date">
+        <input  type="text" id="startDate" name="from" ng-model="route.startDate" placeholder="Start Date">
         <!-- <label for="to">End Date</label> -->
-        <input class="dateStyle"  type="text" id="to" name="to" placeholder="End Date">
+        <input  type="text" id="endDate" name="to" ng-model="route.endDate" placeholder="End Date">
 
         <div class="directions">
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
@@ -72,20 +72,20 @@
 
  <script type="text/javascript">
     $(function() {
-        $( "#from" ).datepicker({
+        $( "#startDate" ).datepicker({
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 2,
           onClose: function( selectedDate ) {
-            $( "#to" ).datepicker( "option", "minDate", selectedDate );
+            $( "#endDate" ).datepicker( "option", "minDate", selectedDate );
           }
         });
-        $( "#to" ).datepicker({
+        $( "#endDate" ).datepicker({
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 2,
           onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+            $( "#startDate" ).datepicker( "option", "maxDate", selectedDate );
           }
         });
     });

@@ -12,6 +12,11 @@
  max-width: 100%;
  height: auto;
 }*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   width: 100%; 
   background-color: #2E7D32;
@@ -95,7 +100,10 @@ color:#2E7D32;
   overflow-y: scroll;
     /*box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);*/
 }
-
+/*#grid {
+  width: 100%;
+}
+*/
 #gridDash{
   height: 600px;
   width: 100%;
@@ -127,6 +135,8 @@ color:#2E7D32;
   /*display: inline-block;*/
   
 }
+
+
 .cardNav {
    
   /*color:white;*/  
@@ -177,7 +187,7 @@ color:#2E7D32;
 }
 
 hr {
-  font-size: 1px;
+  font-size:1px;
   color:#B6B6B6;
   margin:0;
 
@@ -225,33 +235,76 @@ $primary-text-color:   #212121
 $secondary-text-color: #727272
 $divider-color:        #B6B6B6
 */
+.cardNavWrapper {
+  display: flex;
+  width: 100%px;
+  
+  /*border: 3px solid magenta;*/
+}
+.infoWrapper {
+  width: 100%;
+  /*border: 3px solid orange;*/
+  /*display: flex;*/
+  /*align-items:stretch ;*/
+
+}
+.dirWrapper {
+  /*width: 0%;*/
+  /*display:inline;*/
+  /*display:none;*/
+  /*border:8px solid black;*/
+
+}
 
 .expandCard {
   background-color:#C8E6C9;
   width:750px;
   height:425px;
   position: center;
-    .flexDiv2.secondaryText {
+/*    .flexDiv2.secondaryText {
       width:30%;
       border:5px solid red;
-    }
-    .showDir{
-      background-color: white;
-      color:#212121;
+    }*/
+    /*.showDir{*/
+      /*background-color: white;*/
+      /*color:#212121;*/
       /*border: 2px solid goldenrod;*/
-      margin-right: -250px;
+/*      margin-right: -250px;
       margin-left:-150px;
       text-align: left;
       max-height: 200px;
-      overflow-x:scroll;
-    }
-/*    .dirBox{
+      overflow-x:scroll;*/
+/*    }
+    .dirBox{
       width: 300px;
       height: 300px;
       border:2px solid blue;
     } */
 
 }
+.expandCard .flexDiv2 .secondary{
+  width: 30%;
+  /*border: 5px solid red;*/
+}
+
+.expandCard .showDir{
+  /*background-color: white;*/
+  color:#212121;
+  /*border: 2px solid goldenrod;*/
+  margin-right: -250px;
+  /*margin-left:-150px;*/
+  text-align: left;
+  max-height: 200px;
+  overflow-x:scroll;
+}
+
+.expandCard .dirBox{
+  overflow: scroll;
+  width: 400px;
+  height: 225px;
+  /*border:2px solid blue;*/
+}
+
 .spotCard {
   width: 260px;
   height: 150px;
@@ -259,8 +312,7 @@ $divider-color:        #B6B6B6
   margin-right: auto;
   margin-left: auto;
   background: #C8E6C9; 
-
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);
 }
 
 .right-half {
@@ -269,9 +321,9 @@ float: left;
 }
 
 .main {
-  /*width: 100%;
-  height: 550px;
- /* overflow: visible;*/
+  width: 100vw;
+  /*height: 550px;*/
+ /* overflow: visible;
   padding-top: 100px;
   max-height: 750px;
   /*max-width: 100vw;*/
@@ -281,7 +333,7 @@ float: left;
 }
 
 .view {
-  width: 1440px;
+  width: 100vw;
   height: 550px;
   margin: auto;
   float: left;
@@ -840,9 +892,11 @@ float: left;
 }
 
 .floatButton {
+  width: 40px;
+  margin: 0 auto;
   margin-top:-20px;
-  margin-left: 60%;
-  margin-bottom: -20px;
+  /*margin-left: 60%;*/
+  /*margin-bottom: -20px;*/
 /*  max-height: 300px;
   overflow-x: scroll;*/
 }
@@ -913,12 +967,18 @@ form h1 {
   /*padding: 20px;*/
 }
 
+input .search {
+  display: inline;
+  padding:0px 0 0 0;
+  background-color: magenta;
+}
+
 input {
   margin: 25px 25px 0px 25px;
   width: 200px;
-  display: block;
+  display: inline;
   border: none;
-  padding: 30px 0 0 0;
+  padding: 0px 0 0 0;
   border-bottom: solid 1px #4CAF50;
   -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
           transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
@@ -989,7 +1049,7 @@ color:white;
 background-color: #4CAF50;
 /*background: url(https://images.unsplash.com/photo-1445308394109-4ec2920981b1?crop=entropy&dpr=0.67&fit=crop&fm=jpg&h=2275&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=4325);*/
 width:200px;
-height:100px;
+/*height:100px;*/
 /*margin: none;*/
 }
 

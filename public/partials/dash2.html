@@ -3,6 +3,8 @@
    <!--  <ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/> -->
     <button><a href="/campgrounds">NEW TRIP</a></button>
 	<button ng-click="logoutUser()">LOGOUT</button>
+	<ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon>
+	<input id="search" type="text" ng-model="search" placeholder="SEARCH"/>
 	<!-- <ng-md-icon icon="search" class="searchIcon" style="fill:#4CAF50" size="32px"></ng-md-icon><input class="searchBox" type="text" ng-model="search" placeholder="SEARCH"/> -->
 </md-toolbar>
 
@@ -10,7 +12,7 @@
 <div class="middleGround">
 	<!-- <h1>My Trip Dashboard </h1> -->
 
-	<ng-md-icon icon="search" style="fill:#4CAF50" size="32px"></ng-md-icon><input type="text" ng-model="search" placeholder="SEARCH"/>
+	
 
 <!-- 	<button><a href="/campgrounds">NEW TRIP</a></button>
 	<button ng-click="logoutUser()">LOGOUT</button> -->
@@ -34,7 +36,7 @@
 	<div id="gridDash">
 	    	
 		<div ng-repeat="data in dataStuff.user.trips | filter: search track by $index " id="preview" class="tripsInDash" ng-class="expandClass ? 'expandCard' : 'none'" ng-click="expandClass = !expandClass">
-			
+		
 	        <nav class="cardNav">
 	        </nav> 
 	        
@@ -47,67 +49,77 @@
             	</div>
  
         	</nav>
-        	<div class="floatButton">
-            	<button class="btn btn--primary" ng-click="showDirections = !showDirections"><ng-md-icon icon="directions" style="fill:#2E7D32" size="32px" class="dirIcon"></ng-md-icon>
+		<div class="cardNavWrapper">
+
+        	
+
+			<div class="infoWrapper">
+	        	
+	        	
+		        <div class="flexbox-container">
+	        		<div class="flexDiv">
+	        			<ng-md-icon icon="event" style="fill:#727272" size="32px"></ng-md-icon>
+	        		</div>
+	        		<div class="flexDiv2">
+	        			<span class="primaryText">Dates</span>
+	        			<br/>
+	        			<span class="secondaryText">{{data.startDate}} to {{data.endDate}}</span>
+	        		</div>
+	        	</div>
+	        	<hr></hr> 
+
+
+	        	<div class="flexbox-container">
+	        		<div class="flexDiv">
+	        			<ng-md-icon icon="home" style="fill:#727272" size="32px"></ng-md-icon>
+	        		</div>
+	        		<div class="flexDiv2">
+	        			<span class="primaryText">From</span>
+	        			<br/>
+	        			<span class="secondaryText">{{data.from}}</span>
+	        		</div>
+	        	</div>
+	        	<hr></hr>
+
+	        	<div class="flexbox-container">
+	        		<div class="flexDiv">
+	        			<ng-md-icon icon="place" style="fill:#727272" size="32px"></ng-md-icon>
+	        		</div>
+
+	        		<div class="flexDiv2">
+	            		<span class="primaryText">To</span>
+	            		<br/>
+	            		<span class="secondaryText">{{data.to}}</span>
+	            	</div>
+	        	</div>
+	        	<hr></hr> 
+
+	        	<div class="flexbox-container">
+	        		<div class="flexDiv">
+	        			<ng-md-icon icon="link" style="fill:#727272" size="32px"></ng-md-icon>
+	        		</div>
+
+	        		<div class="flexDiv2">
+	            		<span class="primaryText">Reserve</span>
+	            		<br/>
+	            		<span class="secondaryText"><a href="
+	    		http://www.reserveamerica.com/unifSearch.do?tti=Search">Make a Reservation</a></span>
+	            	</div>
+	        	</div>
+        	</div><!--infoWrapper-->
+		    <div class="dirWrapper">
+	        	<div class="floatButton">
+	            	<button class="btn btn--primary" ng-click="showDirections = !showDirections">
+	            		<ng-md-icon icon="directions" style="fill:#2E7D32" size="32px" class="dirIcon"></ng-md-icon>
+	        		</button>
+	        	</div>	
             	
-	            		<!-- <div class="dirBox"> -->
+	            <div class="dirBox">
 	            	<div class="showDir" ng-show="showDirections" ng-repeat="(key, value) in data" >
 	        			<span ng-bind-html="trustSrc(value)">{{value}}</span>
-	        			<!-- </div> -->
-        			</div>
-        		</button>
-        	</div>	
-        	
-	        <div class="flexbox-container">
-        		<div class="flexDiv">
-        			<ng-md-icon icon="event" style="fill:#727272" size="32px"></ng-md-icon>
+	        			</div>
         		</div>
-        		<div class="flexDiv2">
-        			<span class="primaryText">Dates</span>
-        			<br/>
-        			<span class="secondaryText">July 22 to January 15</span>
-        		</div>
-        	</div>
-        	<hr></hr> 
-
-
-        	<div class="flexbox-container">
-        		<div class="flexDiv">
-        			<ng-md-icon icon="home" style="fill:#727272" size="32px"></ng-md-icon>
-        		</div>
-        		<div class="flexDiv2">
-        			<span class="primaryText">From</span>
-        			<br/>
-        			<span class="secondaryText">{{data.from}}</span>
-        		</div>
-        	</div>
-        	<hr></hr>
-
-        	<div class="flexbox-container">
-        		<div class="flexDiv">
-        			<ng-md-icon icon="place" style="fill:#727272" size="32px"></ng-md-icon>
-        		</div>
-
-        		<div class="flexDiv2">
-            		<span class="primaryText">To</span>
-            		<br/>
-            		<span class="secondaryText">{{data.to}}</span>
-            	</div>
-        	</div>
-        	<hr></hr> 
-
-        	<div class="flexbox-container">
-        		<div class="flexDiv">
-        			<ng-md-icon icon="link" style="fill:#727272" size="32px"></ng-md-icon>
-        		</div>
-
-        		<div class="flexDiv2">
-            		<span class="primaryText">Reserve</span>
-            		<br/>
-            		<span class="secondaryText"><a href="
-    		http://www.reserveamerica.com/unifSearch.do?tti=Search">Make a Reservation</a></span>
-            	</div>
-        	</div>
+	        </div><!--dirWrapper-->
         	<!-- <hr></hr>  -->
 
         	<!-- <div class="flexbox-container">
@@ -161,7 +173,8 @@
  
             	<!-- </div> -->
 
-				<!-- </div> -->
+			<!-- </div> -->
+		</div><!--cardNavWrapperDiv-->
 		</div>
 				
 
@@ -169,6 +182,23 @@
 			
 </div>
 </div>
+
+ <script type="text/javascript">
+	$(document).on('click', '.btn--primary', function(){
+// 	// 	console.log('button clicked')
+// 	// 	if($('.infoWrapper').css('width') >'50%'){
+// 	// 		$('.infoWrapper').css({'width':'100%'};
+// 	// 	} else {
+// 	// 		$('.infoWrapper').css('width':'50%');
+// 	// 	}
+
+
+// 		// $('.infoWrapper').css({"width":"50%"});
+// 		// $('.dirWrapper').css({'width':'50%'});
+// 		$('.dirWrapper').css({"width":})	
+
+	})
+ </script>
 
 
 

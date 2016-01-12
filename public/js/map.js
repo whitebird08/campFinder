@@ -207,7 +207,7 @@ function updateRoute(waypts){
           $.ajax({
             type: "POST",
             url: "../campers/addTrip",
-            data: {tripName: $('#trip').val(), to: $('#to').val(), from: $('#from').val(), directions: directionsArr},
+            data: {tripName: $('#trip').val(), startDate: $('#startDate').val(), endDate: $('#endDate').val(), to: $('#to').val(), from: $('#from').val(), directions: directionsArr},
             cache: false,
             success: function(data){
              if(data)console.log(data)
