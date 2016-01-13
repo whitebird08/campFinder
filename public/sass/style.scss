@@ -74,6 +74,7 @@ color:#2E7D32;
   width: 20%;
   height: 93vh;
   padding-left: 15px;
+
 /*  max-height: 700px;
 */  
   background: #C8E6C9;
@@ -100,10 +101,10 @@ color:#2E7D32;
   overflow-y: scroll;
     /*box-shadow: 2px 2px 2px rgba(0,0,0,0.25), 2px 2px 2px rgba(0,0,0,0.22);*/
 }
-/*#grid {
-  width: 100%;
+#grid {
+ padding-top:80px;
 }
-*/
+
 #gridDash{
   height: 600px;
   width: 100%;
@@ -568,7 +569,7 @@ float: left;
   padding-top:5px;
   padding-bottom: 5px;
   width:200px;
-  z-index: 1000;
+  z-index: 9000;
 }
 
 .textLogo {
@@ -1073,13 +1074,13 @@ a:hover
 h1.infoWindow  {
 color:white;
 background-color: #4CAF50;
+text-align: center;
 /*background: url(https://images.unsplash.com/photo-1445308394109-4ec2920981b1?crop=entropy&dpr=0.67&fit=crop&fm=jpg&h=2275&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=4325);*/
 width:200px;
 /*height:100px;*/
 /*margin: none;*/
 }
-
-
+b
 
 
 /*.datepickerdemoBasicUsage {
@@ -1133,6 +1134,10 @@ div.ui-datepicker-header div.ui-widget-header div.ui-helper-clearfix div.ui-corn
   background-color: yellow;
 }
 */
+button#journey {
+ margin-left: 50%;
+ margin-right: 50%;
+}
 
 .panelButtons {
   margin-top: 20px;
@@ -1142,29 +1147,29 @@ margin-left: 20px;
 
 .ui-datepicker-header {
       /*background-color: green;*/
-      border:2px solid #C8E69C;
+      /*border:2px solid #C8E69C;*/
 }
 .ui-icon {
   /*border: 1px solid red;*/
-  background-color: green;
+  /*background-color: green;*/
 
 }
 .ui-datepicker-title {
    /*border: 1px solid red;*/
-  background-color: green;
+  /*background-color: green;*/
 }
 .ui-datepicker-month {
-  background-color: #c8E69C;
+  background-color: #C8E69C;
 }
-.ui-widget-header {
-      background-color: green;
-}
+  /*.ui-widget-header {
+        background-color: green;
+  }*/
 /*tbody {
   color:magenta;
 }*/
 
 .ui-datepicker-calendar {
-  background-color: #4CAF50;
+  /*background-color: #4CAF50;*/
 }
 
 /*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
@@ -1177,15 +1182,16 @@ margin-left: 20px;
   border: orange;
 }*/
 
-.ui-widget-content  {
+/*.ui-widget-content  {
    background:magenta;
     font-weight: normal;
    /* color: magenta;*/
-} 
+/*} */
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+/*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     border: 1px solid #d3d3d3;
     background: blue;
     font-weight: normal;
     color: red;
-}
+}*/
+

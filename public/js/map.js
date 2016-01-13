@@ -118,9 +118,10 @@ function route(data, waypts) {
               markersArray.push(marker);
               
 
-              var contentString = '<div id="content">'+
+              var contentString = '<div>'+
                 '<h1 class="infoWindow">' + data[j].facilityName + '</h1>' +
-                // "<div class='photo'><img src='http://www.reserveamerica.com" + data[j].photo + "'/></div>" +
+
+                "<div class='photo'><img src='http://www.reserveamerica.com" + data[j].photo + "'/></div>" +
                 // '<div>' + data[j].available + '</div>' +
                 // '<div>' + data[j].amps + '</div>' +
                 // '<div>' + data[j].pets + '</div>' +
