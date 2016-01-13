@@ -60,6 +60,7 @@ h1 .route {
   float: left;
   width: 20%;
   height: 93vh;
+  padding-left: 15px;
   /*  max-height: 700px;
   */
   background: #C8E6C9;
@@ -112,7 +113,7 @@ h1 .route {
   height: 425px;
   margin: 20px;
   float: left;
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.25), 12px 12px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), 8px 8px 8px rgba(0, 0, 0, 0.22);
   /*display: inline-block;*/ }
 
 .cardNav {
@@ -260,7 +261,8 @@ $divider-color:        #B6B6B6
   overflow: scroll;
   width: 400px;
   height: 225px;
-  max-height: 215px;
+  max-width: 470px;
+  max-height: 195px;
   /*border:2px solid blue;*/ }
 
 .spotCard {
@@ -278,7 +280,7 @@ $divider-color:        #B6B6B6
 
 .main {
   width: 100vw;
-  /*height: 550px;*/
+  /*height: 550px;  */
   /* overflow: visible;
    padding-top: 100px;
    max-height: 750px;
@@ -290,7 +292,8 @@ $divider-color:        #B6B6B6
 .view {
   width: 100vw;
   height: 550px;
-  margin: auto;
+  /*margin-top:50%;
+  margin-bottom: 50%;*/
   float: left;
   position: relative;
   /*border: 8px solid red;*/
@@ -490,7 +493,7 @@ $divider-color:        #B6B6B6
   z-index: 1000; }
 
 .textLogo {
-  z-index: 1000;
+  z-index: 3000;
   /*color: white;*/
   padding-top: 25px;
   /*text-align: center;*/
@@ -849,6 +852,15 @@ form h1 {
   box-sizing: border-box;
   /*padding: 20px;*/ }
 
+.magnify {
+  position: relative;
+  display: inline; }
+
+.magIcon {
+  margin-top: 20px;
+  position: absolute;
+  /*background-color: blue;*/ }
+
 input .search {
   display: inline;
   padding: 0px 0 0 0;
@@ -927,44 +939,98 @@ h1.infoWindow {
   * Demo styles for mdCalendar.  
   color:magenta; 
 }*/
-#startDate {
-  color: green; }
+/*/*#startDate {
+  color:green;
+}
 
-#ui-datepicker-div {
+#ui-datepicker-div{
   background-color: white;
-  /*width: 50px;*/ }
-
-td#ui-datepicker-div {
-  color: green;
+  /*width: 50px;*/
+/*}*/
+/*
+td#ui-datepicker-div{
+  color:green;
   background-color: white;
-  width: 50px; }
+  width: 50px;
+}
 
 div.ui-datepicker-header {
-  color: green; }
+ color:green;
+
+}
 
 div.ui-datepicker-calendar {
+ background-color: green; 
+}
+div.ui-datepicker-calendar td {
+ background-color: yellow; 
+}
+div.ui-datepicker{
+  background-color: blue;
+}
+div#ui-datepicker-div{
+  color:green;
+  background-color: white;
+}
+div.ui-datepicker-header div.ui-widget-header div.ui-helper-clearfix div.ui-corner-right {
+   background-color: goldenrod;
+}
+.ui-datepicker 
+.ui-widget 
+.ui-widget-content 
+.ui-helper-clearfix 
+.ui-corner-all 
+.ui-datepicker-multi-2 
+.ui-datepicker-multi {
+  background-color: yellow;
+}
+*/
+.panelButtons {
+  margin-top: 20px;
+  margin-left: 20px; }
+
+.ui-datepicker-header {
+  /*background-color: green;*/
+  border: 2px solid #C8E69C; }
+
+.ui-icon {
+  /*border: 1px solid red;*/
   background-color: green; }
 
-div.ui-datepicker-calendar td {
-  background-color: yellow; }
+.ui-datepicker-title {
+  /*border: 1px solid red;*/
+  background-color: green; }
 
-div.ui-datepicker {
-  background-color: blue; }
+.ui-datepicker-month {
+  background-color: #c8E69C; }
 
-div#ui-datepicker-div {
-  color: green;
-  background-color: white; }
+.ui-widget-header {
+  background-color: green; }
 
-div.ui-datepicker-header div.ui-widget-header div.ui-helper-clearfix div.ui-corner-right {
-  background-color: goldenrod; }
+/*tbody {
+  color:magenta;
+}*/
+.ui-datepicker-calendar {
+  background-color: #4CAF50; }
 
-.ui-datepicker
-.ui-widget
-.ui-widget-content
-.ui-helper-clearfix
-.ui-corner-all
-.ui-datepicker-multi-2
-.ui-datepicker-multi {
-  background-color: yellow; }
+/*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #c8E69C;
+    background: none;
+    font-weight: normal;
+    color: green;
+}*/
+/*#ui-datepicker-div > div {
+  border: orange;
+}*/
+.ui-widget-content {
+  background: magenta;
+  font-weight: normal;
+  /* color: magenta;*/ }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: 1px solid #d3d3d3;
+  background: blue;
+  font-weight: normal;
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */
