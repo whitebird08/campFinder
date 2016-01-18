@@ -99,9 +99,9 @@ function route(data, waypts) {
       
       for(var i=0; i < boxes.length; i++){  
         for(var j = 0; j < data.length; j++){
-              
-          if(data[j].lat > boxes[i].N.N && data[j].lat < boxes[i].N.j){
-            if(data[j].lng < boxes[i].j.N && data[j].lng > boxes[i].j.j){
+              console.log(boxes, 'boxes')
+          if(data[j].lat > boxes[i].R.R && data[j].lat < boxes[i].R.j){
+            if(data[j].lng < boxes[i].j.R && data[j].lng > boxes[i].j.j){
               var marker = new google.maps.Marker({
                 position: data[j],
                 icon: 

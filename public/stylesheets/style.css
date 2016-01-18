@@ -17,14 +17,14 @@
 
 body {
   width: 100%;
-  background-color: #2E7D32; }
+  background-color: #1B5E20; }
 
 .error {
   color: red; }
 
 #map {
   width: 80vw;
-  height: 700px;
+  height: 100vh;
   background-color: #CCC;
   /*border: 2px solid magenta;*/
   /*z-index: 200;*/ }
@@ -987,6 +987,14 @@ button#journey {
     background: blue;
     font-weight: normal;
     color: red;
+}*/
+/*.smokescreen {
+  width:100vw;
+  height: 550px;
+  background-color: darkgreen;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 100
 }*/
 
 /*# sourceMappingURL=style.css.map */
