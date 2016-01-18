@@ -9,7 +9,7 @@ var unirest = require('unirest');
 var parseString = require('xml2js').parseString;
 var bcrypt = require('bcrypt');
 
-
+//console.log('testing')
 
 // router.post('/campers/addTrip', function(req, res,next){
 //   console.log('in post addTrip', req.body);
