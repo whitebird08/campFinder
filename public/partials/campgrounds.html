@@ -1,40 +1,17 @@
 <md-toolbar layout="row" >
-        <img class="toolbarTextAndIcon" src="/images/campsideTextAndIcon.svg" />
-      <!-- <img src="/images/campsideTitle&LogoMedium.png" /> -->
+      <img class="toolbarTextAndIcon" src="/images/campsideTextAndIcon.svg" />
       <button><a href="/dash">DASH</a> </button>
       <button ng-click="logoutUser()">LOGOUT</button>
 </md-toolbar>
 
 <div flex layout="row">
     <div class="myPanels">
-       
-<!--     <div class="left-left">
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z5 ">
-            <h1>This Trip </h1>
-            <div class="tripCard">
 
-                
-            </div>
-            
-        </md-sidenav>
-    </div> -->
     <div class="left-middle">
-        <!-- <button ng-click="logoutUser()">Logout</button> -->
-        <!-- <button><a href="/dash">Dash</a> </button> -->
-        <!-- <h1 class="route">My Route </h1> -->
-      
-            <!-- <label>New Trip Name</label> --> 
-
         
         <input id="trip" placeholder="Trip Name"/>
-        <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
-        <!-- <br/>
-        <hr/> -->
-        <!-- <label for="from">Start Date</label> -->
+
         <input type="text" id="startDate" name="from" ng-model="route.startDate" placeholder="Start Date">
-        <!-- <label for="to">End Date</label> -->
-
-
 
         <input type="text" id="endDate" name="to" ng-model="route.endDate" placeholder="End Date">
 
@@ -42,32 +19,20 @@
             <md-sidenav md-is-locked-open="true" class="md-whiteframe-z4">
                 
                 <input type="text" id="distance" placeholder="Search Range" value="" size="2">
-                <!-- <br>  -->
-                <!-- when you use a name with a dot after and then define a property name
-                in the ng-model , you generate a new object in $scope out of 
-                thin air -->
+
                 <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
                 <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
-                <!-- <div class="panelButtons"> -->
+
                     <button class="panelButtons" type="submit"  value="View Directions" id="get-route">VIEW ROUTE</button> 
 
-                    <button id="createTripButton"><a href="/dash">SAVE TRIP</a></button>
-                <!-- </div> -->
-                
+                    <button id="createTripButton"><a href="/dash">SAVE TRIP</a></button> 
                      
                 <div id="right-panel"></div>
             </md-sidenav>
         </div>
         
     </div>
-<!--     <div class="left-right">
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3 ">
-            <h1>Waypoint Names</h1>
-            <div class="spotCard"></div>
-            <div class="spotCard">Spot Number Two</div>
-            
-        </md-sidenav>
-    </div> -->
+
     <div class="right-half">
         <md-content flex id="content" >
             <div id="map"></div>

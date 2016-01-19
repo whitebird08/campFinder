@@ -9,22 +9,6 @@ var unirest = require('unirest');
 var parseString = require('xml2js').parseString;
 var bcrypt = require('bcrypt');
 
-//console.log('testing')
-
-// router.post('/campers/addTrip', function(req, res,next){
-//   console.log('in post addTrip', req.body);
-//          console.log(req.session.camper._id,'user id session');
-
-//not finished , in the middle of figuring out update
-//so we can add a tne trip to the trips array
-   //  campers.findOne({_id: req.session.camper._id}, function(err, doc){
-   //       doc.trips.push(req.body);
-   //   campers.update({_id:req.session.camper._id}, doc, function(err, doc){
-   //     res.json({error:err, doc:doc});
-   //   })
-   // })     
-// })
-
 router.post('/campers/addTrip', function(req,res,next){
   campers.findOne({_id: req.session.id}, function(err, doc){
          doc.trips.push(req.body);
@@ -123,29 +107,16 @@ router.get('/parse', function(req, res, next) {
       // unirest.get( "http://api.amp.active.com/camping/campgrounds?pname=ASPEN&api_key=6x8gz7qm68nwaj9ckzg3z5yg")
       .end(function (response) {
         var campsitesXML = response.body
-        // console.log(response.body, 'campsitesssss')
         var data = []
         parseString(campsitesXML, function (err, result) {        
-              // console.log(result, "THIS IS IT!!!!!!!!!!!!!!!!!")
               // data.push( { campgroundName = parkId } )
         });
-      // console.log(data, 'dataaa') 
       // res.json(data);
-    });
-      // console.log(data) 
+    }); 
       res.json(data);
     }); 
 });
 
-
-
-// router.get('/campers/showTrips', function(req, res, next){
-//   console.log('somestring')
-  // var currentUser = req.session.camper;
-  // campers.findOne({_id:currentUser._id}, function(err, doc){
-  //   res.json(doc);
-  // })
-// })
 router.get('/showTrips', function(req, res, next){
       var currentUser = req.session.camper;
       console.log('currentUser', currentUser);
