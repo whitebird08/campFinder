@@ -67,6 +67,7 @@ h1 .route {
 #gridDash {
   height: 600px;
   width: 100%;
+  /*margin:auto;*/
   overflow-x: scroll; }
 
 .tripsInDash {
@@ -398,6 +399,7 @@ $divider-color:        #B6B6B6
 .middleGround {
   height: 80%;
   width: 100%;
+  padding-left: 4%;
   margin: auto;
   position: absolute;
   background: url() #C8E6C9; }
