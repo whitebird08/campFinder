@@ -24,7 +24,7 @@ body {
 
 #map {
   width: 80vw;
-  height: 100vh;
+  height: 93vh;
   background-color: #CCC; }
 
 .photo {
@@ -38,6 +38,13 @@ h1 .route {
 .directions {
   float: left;
   padding-right: 10px; }
+
+#right-panel {
+  float: left;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  max-height: 48vh;
+  overflow-x: scroll; }
 
 .container {
   margin: 0;
