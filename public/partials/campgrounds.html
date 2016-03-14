@@ -20,11 +20,14 @@
                 
                 <input type="text" id="distance" placeholder="Search Range" value="" size="2">
 
-                <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/> <br>
+                <input type="text" id="from" ng-model="route.from" placeholder="Starting Point"/>
+                <script type="text/javascript">$(document).ready(function(){
+                  $("#from").geocomplete();
+                  $("#to").geocomplete();
+                })</script>
+                 <br>
                 <input type="text" id="to" ng-model="route.to" placeholder="Destination"/>
-
                     <button class="panelButtons" type="submit"  value="View Directions" id="get-route">VIEW ROUTE</button> 
-
                     <button id="createTripButton"><a href="/dash">SAVE TRIP</a></button> 
                      
                 <div id="right-panel"></div>

@@ -11,11 +11,11 @@ var bcrypt = require('bcrypt');
 
 router.post('/campers/addTrip', function(req,res,next){
   campers.findOne({_id: req.session.id}, function(err, doc){
-         doc.trips.push(req.body);
-     campers.update({_id: req.session.id}, doc, function(err, doc){
-       res.json({error:err, doc:doc});
-     })
-   })     
+    doc.trips.push(req.body);
+    campers.update({_id: req.session.id}, doc, function(err, doc){
+      res.json({error:err, doc:doc});
+    })
+  })     
   
 })
 
